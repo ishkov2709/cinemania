@@ -1,0 +1,21 @@
+@keyframes changeBgMobFirstTheme {
+  0% {
+    background-image: url('../img/background/mob/img_bg_mob_1.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/mob/img_bg_mob_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/mob/img_bg_mob_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/mob/img_bg_mob_1.jpg');
+    background-size: cover;
+  }
+}
