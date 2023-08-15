@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Form = styled.form`
   position: relative;
-  margin-top: auto;
 `;
 
 export const Input = styled.input`

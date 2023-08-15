@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm';
 import { Btn, Categories, Container, Section } from './Catalog.styled';
 import { useEffect } from 'react';
 import FilmList from './FilmList/FilmList';
-import Pagination from './FilmList/Pagination/Pagination';
+import Pagination from './Pagination/Pagination';
 
 const Catalog = () => {
   const trendFilms = useSelector(state => state.trendFilms);

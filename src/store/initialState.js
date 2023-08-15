@@ -8,6 +8,9 @@ const initialState = {
     page: null,
     totalPages: null,
   },
+  auth: {
+    email: null,
+  },
 };
 
 export default initialState;
