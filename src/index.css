@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Rubik:wght@400;700&display=swap');
 
 body {
   margin: 0;
@@ -32,6 +32,12 @@ ol {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .container {

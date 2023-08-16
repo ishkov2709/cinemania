@@ -5,6 +5,7 @@ import Home from './Home';
 import { lazy } from 'react';
 
 const Catalog = lazy(() => import('./Catalog'));
+const FilmDetails = lazy(() => import('./FilmDetails'));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
+          <Route path="catalog/:filmId" element={<FilmDetails />} />
         </Route>
       </Routes>
     </div>
