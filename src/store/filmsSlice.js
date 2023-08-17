@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import initialState from './initialState';
-import { fetchFilmById, fetchTrendFilms } from './operations';
+import { fetchFilmActors, fetchFilmById, fetchTrendFilms } from './operations';
 
 const handleFetchFilmsPending = state => {
   state.isLoading = true;
@@ -8,6 +8,8 @@ const handleFetchFilmsPending = state => {
   state.fetchUrl = null;
   state.pagination.page = null;
   state.pagination.totalPages = null;
+  state.filmDetails = null;
+  state.filmActors = null;
 };
 
 const handleFetchFilmsFulfilled = (state, { payload }) => {
@@ -38,6 +40,21 @@ const handleFetchFimByIdRejected = (state, { payload }) => {
   state.error = payload;
 };
 
+const handleFetchFilmActorsPending = state => {
+  state.isLoading = true;
+  state.filmActors = null;
+};
+
+const handleFetchFilmActorsFulfilled = (state, { payload }) => {
+  state.isLoading = false;
+  state.filmActors = payload;
+};
+
+const handleFetchFilmActorsRejected = (state, { payload }) => {
+  state.isLoading = false;
+  state.error = payload;
+};
+
 const filmsSlice = createSlice({
   name: 'films',
   initialState,
@@ -48,7 +65,10 @@ const filmsSlice = createSlice({
       .addCase(fetchTrendFilms.rejected, handleFetchFilmsRejected)
       .addCase(fetchFilmById.pending, handleFetchFimByIdPending)
       .addCase(fetchFilmById.fulfilled, handleFetchFimByIdFulfilled)
-      .addCase(fetchFilmById.rejected, handleFetchFimByIdRejected);
+      .addCase(fetchFilmById.rejected, handleFetchFimByIdRejected)
+      .addCase(fetchFilmActors.pending, handleFetchFilmActorsPending)
+      .addCase(fetchFilmActors.fulfilled, handleFetchFilmActorsFulfilled)
+      .addCase(fetchFilmActors.rejected, handleFetchFilmActorsRejected);
   },
 });
 

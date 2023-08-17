@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
 import '../index.css';
 import SharedLayout from './SharedLayout';
 import Home from './Home';
-import { lazy } from 'react';
 
 const Catalog = lazy(() => import('./Catalog'));
 const FilmDetails = lazy(() => import('./FilmDetails'));
+const Actors = lazy(() => import('./Actors'));
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="catalog/:filmId" element={<FilmDetails />} />
+          <Route path="catalog/:filmId/actors" element={<Actors />} />
         </Route>
       </Routes>
     </div>

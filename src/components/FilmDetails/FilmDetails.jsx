@@ -65,7 +65,9 @@ const FilmDetails = () => {
             <Subtitle>Жанри:</Subtitle>
             <Generes>{genres.map(el => el.name).join(', ')}</Generes>
 
-            <ActorsLink>Актори</ActorsLink>
+            <ActorsLink to="actors" state={{ from: location }}>
+              Актори
+            </ActorsLink>
           </ContentBox>
         </Container>
       </Section>

@@ -3,6 +3,7 @@ const initialState = {
   search: null,
   trendFilms: null,
   filmDetails: null,
+  filmActors: null,
   error: null,
   fetchUrl: null,
   pagination: {

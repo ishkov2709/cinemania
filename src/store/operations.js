@@ -17,10 +17,21 @@ export const fetchTrendFilms = createAsyncThunk(
   }
 );
 
-export const fetchFilmById = createAsyncThunk('film/byId', async (filmId, thunkAPI) => {
+export const fetchFilmById = createAsyncThunk('film/details', async (filmId, thunkAPI) => {
   try {
     const { data } = await axios.get(`/movie/${filmId}?language=uk-UA&api_key=${API_KEY}`);
     return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
+});
+
+export const fetchFilmActors = createAsyncThunk('film/actors', async (filmId, thunkAPI) => {
+  try {
+    const {
+      data: { cast },
+    } = await axios.get(`/movie/${filmId}/credits?language=uk-UA&api_key=${API_KEY}`);
+    return cast;
   } catch (error) {
     return thunkAPI.rejectWithValue(error);
   }
