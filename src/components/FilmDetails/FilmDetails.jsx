@@ -17,11 +17,12 @@ import {
   Year,
   YearField,
 } from './FilmDetails.styled';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilmById } from '../../store/operations';
 import { RxCross1 } from 'react-icons/rx';
 import detailPoster from '../../img/detailPoster/img_poster.jpg';
+import { Skeleton } from '@mui/material';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/original';
 
@@ -31,6 +32,11 @@ const FilmDetails = () => {
   const filmDetails = useSelector(state => state.filmDetails);
   const location = useLocation();
   const backLink = location.state?.from ?? '/catalog';
+  const [loadImg, setLoadImg] = useState(false);
+
+  const handleLoadImg = () => {
+    setLoadImg(true);
+  };
 
   useEffect(() => {
     if (filmId) dispatch(fetchFilmById(filmId));
@@ -47,7 +53,22 @@ const FilmDetails = () => {
             </CloseLink>
 
             <ImgWrapper>
-              <Img src={backdrop_path ? `${BASE_URL}${backdrop_path}` : detailPoster} alt={title} />
+              <Img
+                src={backdrop_path ? `${BASE_URL}${backdrop_path}` : detailPoster}
+                alt={title}
+                loadImg={loadImg}
+                onLoad={handleLoadImg}
+              />
+
+              {!loadImg && (
+                <Skeleton
+                  variant="rectangular"
+                  width={272}
+                  height={153}
+                  animation="wave"
+                  sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
+                />
+              )}
               <YearField>
                 Рік: <Year>{new Date(release_date).getFullYear()}</Year>
               </YearField>

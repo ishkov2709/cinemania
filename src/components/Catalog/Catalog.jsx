@@ -12,8 +12,8 @@ const Catalog = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchTrendFilms());
-  }, [dispatch]);
+    if (!trendFilms) dispatch(fetchTrendFilms());
+  }, [trendFilms, dispatch]);
   return (
     <Section>
       <Container className="container">

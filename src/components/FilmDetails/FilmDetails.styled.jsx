@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Skeleton } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
@@ -7,7 +8,9 @@ export const Section = styled.section`
   overflow: scroll;
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  max-width: 390px;
+`;
 
 export const ContentBox = styled.div`
   position: relative;
@@ -32,9 +35,17 @@ export const CloseLink = styled(Link)`
 export const ImgWrapper = styled.div`
   position: relative;
   margin-bottom: 30px;
+
+  width: 100%;
+  max-height: 153px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
 `;
 
 export const Img = styled.img`
+  display: ${({ loadImg }) => (loadImg ? 'block' : 'none')};
   width: 100%;
 `;
 
@@ -114,4 +125,9 @@ export const ActorsLink = styled(Link)`
 
   border: 1px solid #000;
   border-radius: 8px;
+`;
+
+export const SkeletonLoader = styled(Skeleton)`
+  width: 100%;
+  height: inherit;
 `;
