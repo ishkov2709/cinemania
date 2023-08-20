@@ -1,12 +1,14 @@
 const initialState = {
   isLoading: false,
+  lastFetch: null,
   search: null,
   trendFilms: null,
-  filmDetails: null,
+  arrayFilms: null,
   filmActors: null,
   error: null,
   fetchUrl: null,
   pagination: {
+    isPaginated: false,
     page: null,
     totalPages: null,
   },

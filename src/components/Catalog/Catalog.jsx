@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTrendFilms } from '../../store/operations';
+import { fetchPagination, fetchTrendFilms } from '../../store/operations';
 import SearchForm from '../SearchForm';
 import { Btn, Categories, Container, Section } from './Catalog.styled';
 import { useEffect } from 'react';
@@ -7,13 +7,21 @@ import FilmList from './FilmList';
 import Pagination from './Pagination';
 
 const Catalog = () => {
-  const trendFilms = useSelector(state => state.trendFilms);
+  const arrayFilms = useSelector(state => state.arrayFilms);
   const page = useSelector(state => state.pagination.page);
+  const lastFetch = useSelector(state => state.lastFetch);
+  const isPaginated = useSelector(state => state.pagination.isPaginated);
+  const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!trendFilms) dispatch(fetchTrendFilms());
-  }, [trendFilms, dispatch]);
+    if (!arrayFilms && !isPaginated) dispatch(fetchTrendFilms());
+  }, [isPaginated, arrayFilms, dispatch]);
+
+  useEffect(() => {
+    if (page && isPaginated) dispatch(fetchPagination(`${lastFetch}&page=${page}`));
+  }, [page, isPaginated, lastFetch, dispatch]);
+
   return (
     <Section>
       <Container className="container">
@@ -24,9 +32,9 @@ const Catalog = () => {
           <Btn type="button">Нове/Популярне</Btn>
         </Categories>
 
-        {trendFilms && <FilmList films={trendFilms} />}
+        {arrayFilms && <FilmList films={arrayFilms} />}
 
-        {page && <Pagination />}
+        {page && !isLoading && <Pagination />}
       </Container>
     </Section>
   );

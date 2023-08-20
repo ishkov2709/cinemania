@@ -1,9 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import initialState from './initialState';
-import { fetchFilmActors, fetchFilmById, fetchTrendFilms } from './operations';
+import { fetchFilmActors, fetchFilmById, fetchPagination, fetchTrendFilms } from './operations';
 
 const handleFetchFilmsPending = state => {
   state.isLoading = true;
+  state.pagination.page = null;
+  state.pagination.totalPages = null;
+  state.pagination.isPaginated = false;
   state.error = null;
   state.fetchUrl = null;
   state.pagination.page = null;
@@ -14,10 +17,12 @@ const handleFetchFilmsPending = state => {
 
 const handleFetchFilmsFulfilled = (state, { payload }) => {
   state.isLoading = false;
-  state.trendFilms = payload.res.results;
+  state.pagination.page = 1;
+  state.arrayFilms = payload.results;
   state.fetchUrl = payload.fetchUrl;
-  state.pagination.page = payload.res.page;
-  state.pagination.totalPages = payload.res.total_pages;
+  state.pagination.page = payload.page;
+  state.pagination.totalPages = payload.total_pages;
+  state.lastFetch = payload.lastFetch;
 };
 
 const handleFetchFilmsRejected = (state, { payload }) => {
@@ -55,9 +60,37 @@ const handleFetchFilmActorsRejected = (state, { payload }) => {
   state.error = payload;
 };
 
+const handleFetchPaginationPending = state => {
+  state.isLoading = true;
+  state.arrayFilms = null;
+};
+
+const handleFetchPaginationFulfilled = (state, { payload }) => {
+  state.isLoading = false;
+  state.arrayFilms = payload.results;
+};
+
+const handleFetchPaginationRejected = (state, { payload }) => {
+  state.isLoading = false;
+  state.pagination.page = null;
+  state.pagination.totalPages = null;
+  state.pagination.isPaginated = false;
+  state.error = payload;
+};
+
 const filmsSlice = createSlice({
   name: 'films',
   initialState,
+  reducers: {
+    increment: (state, { payload }) => {
+      state.pagination.isPaginated = true;
+      state.pagination.page += payload;
+    },
+    decrement: (state, { payload }) => {
+      state.pagination.isPaginated = true;
+      state.pagination.page -= payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchTrendFilms.pending, handleFetchFilmsPending)
@@ -68,8 +101,13 @@ const filmsSlice = createSlice({
       .addCase(fetchFilmById.rejected, handleFetchFimByIdRejected)
       .addCase(fetchFilmActors.pending, handleFetchFilmActorsPending)
       .addCase(fetchFilmActors.fulfilled, handleFetchFilmActorsFulfilled)
-      .addCase(fetchFilmActors.rejected, handleFetchFilmActorsRejected);
+      .addCase(fetchFilmActors.rejected, handleFetchFilmActorsRejected)
+      .addCase(fetchPagination.pending, handleFetchPaginationPending)
+      .addCase(fetchPagination.fulfilled, handleFetchPaginationFulfilled)
+      .addCase(fetchPagination.rejected, handleFetchPaginationRejected);
   },
 });
 
 export const filmsReducer = filmsSlice.reducer;
+
+export const { increment, decrement } = filmsSlice.actions;

@@ -45,6 +45,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Img = styled.img`
+  display: ${({ loadImg }) => (loadImg ? 'block' : 'none')};
   width: 100%;
 `;
 

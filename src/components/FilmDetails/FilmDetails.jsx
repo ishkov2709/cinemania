@@ -56,6 +56,7 @@ const FilmDetails = () => {
               <Img
                 src={backdrop_path ? `${BASE_URL}${backdrop_path}` : detailPoster}
                 alt={title}
+                loadImg={loadImg}
                 onLoad={handleLoadImg}
               />
 
