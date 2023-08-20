@@ -67,6 +67,7 @@ const handleFetchPaginationPending = state => {
 
 const handleFetchPaginationFulfilled = (state, { payload }) => {
   state.isLoading = false;
+  state.pagination.isPaginated = false;
   state.arrayFilms = payload.results;
 };
 
