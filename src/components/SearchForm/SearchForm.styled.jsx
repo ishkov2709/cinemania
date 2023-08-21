@@ -8,8 +8,12 @@ export const Input = styled.input`
   width: 100%;
   padding: 8px 48px 10px 24px;
 
+  color: #000;
+
   border-radius: 8px;
   border: 2px solid #909090;
+
+  transition: border 250ms linear;
 
   &,
   &::placeholder {
@@ -20,6 +24,12 @@ export const Input = styled.input`
 
   &::placeholder {
     color: #777777;
+  }
+
+  &:focus {
+    outline: none;
+
+    border: 2px solid #e7671d;
   }
 `;
 

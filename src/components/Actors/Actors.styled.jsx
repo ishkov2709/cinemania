@@ -41,8 +41,19 @@ export const CloseLink = styled(Link)`
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 24px;
+
+  @media screen and (max-width: 389px) {
+    & {
+      justify-content: center;
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 390px) {
+    & {
+      width: 318px;
+      margin: 0 auto;
+    }
+  }
 `;
-
-

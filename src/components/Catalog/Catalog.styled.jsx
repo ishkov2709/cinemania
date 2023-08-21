@@ -17,19 +17,3 @@ export const Container = styled.div`
     }
   }
 `;
-
-export const Categories = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-`;
-
-export const Btn = styled.button`
-  min-width: calc((100% - 28px) / 3);
-  padding: 8px;
-  border: 1px solid #000;
-  border-radius: 8px;
-
-  font-weight: 400;
-  font-size: 10px;
-`;

@@ -1,18 +1,18 @@
 import { Outlet } from 'react-router-dom';
-import * as Styled from './SharedLayout.styled';
 import Header from '../Header';
 import { Suspense } from 'react';
+import { CustomWrapper, MainWrapper } from './SharedLayout.styled';
 
 const SharedLayout = () => {
   return (
-    <Styled.MainWrapper>
+    <MainWrapper>
       <Header />
-      <Styled.CustomWrapper>
+      <CustomWrapper>
         <Suspense>
           <Outlet />
         </Suspense>
-      </Styled.CustomWrapper>
-    </Styled.MainWrapper>
+      </CustomWrapper>
+    </MainWrapper>
   );
 };
 
