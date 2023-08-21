@@ -1,28 +1,38 @@
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { MdDiamond } from 'react-icons/md';
 import { BsBookmark } from 'react-icons/bs';
 import { SlLogin } from 'react-icons/sl';
-import * as Styled from './Header.styled';
+import { useDispatch } from 'react-redux';
+import { FavLogWrapper, HeaderWrapper, Nav } from './Header.styled';
+import { reset } from '../../store/filmsSlice';
 
 const Header = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useDispatch();
+
+  const handleReset = () => {
+    if (searchParams.get('query')) setSearchParams();
+
+    dispatch(reset());
+  };
   return (
-    <Styled.HeaderWrapper>
+    <HeaderWrapper>
       <div className="container">
-        <Styled.Nav>
-          <Link to="/">
+        <Nav>
+          <Link to="/" onClick={handleReset}>
             <MdDiamond size={50} color="#ffffff" />
           </Link>
-          <Styled.FavLogWrapper>
+          <FavLogWrapper>
             <Link to="/">
               <BsBookmark size={35} color="#ffffff" />
             </Link>
             <Link to="/">
               <SlLogin size={35} color="#ffffff" />
             </Link>
-          </Styled.FavLogWrapper>
-        </Styled.Nav>
+          </FavLogWrapper>
+        </Nav>
       </div>
-    </Styled.HeaderWrapper>
+    </HeaderWrapper>
   );
 };
 

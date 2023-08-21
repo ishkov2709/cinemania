@@ -134,6 +134,21 @@ const filmsSlice = createSlice({
     setSearch: (state, { payload }) => {
       state.search = payload;
     },
+    reset: state => {
+      state.isLoading = true;
+      state.pagination.page = null;
+      state.pagination.totalPages = null;
+      state.pagination.isPaginated = false;
+      state.lastFetch = null;
+      state.error = null;
+      state.fetchUrl = null;
+      state.pagination.page = null;
+      state.pagination.totalPages = null;
+      state.filmDetails = null;
+      state.filmActors = null;
+      state.search = null;
+      state.arrayFilms = null;
+    },
   },
   extraReducers: builder => {
     builder
@@ -181,4 +196,4 @@ const filmsSlice = createSlice({
 
 export const filmsReducer = filmsSlice.reducer;
 
-export const { increment, decrement, setSearch } = filmsSlice.actions;
+export const { increment, decrement, setSearch, reset } = filmsSlice.actions;

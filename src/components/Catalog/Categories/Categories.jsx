@@ -22,7 +22,7 @@ const Categories = () => {
         Незабаром у кіно
       </Btn>
       <Btn type="button" onClick={() => handleFetch(fetchPopularFilms)}>
-        Попутярні
+        Популярні
       </Btn>
       <Btn type="button" onClick={() => handleFetch(fetchTopRatedFilms)}>
         За рейтингом
