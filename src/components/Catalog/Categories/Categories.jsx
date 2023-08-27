@@ -4,7 +4,7 @@ import {
   fetchPopularFilms,
   fetchTopRatedFilms,
   fetchUpcomingFilms,
-} from '../../../store/operations';
+} from '../../../store/films/operations';
 import { useSearchParams } from 'react-router-dom';
 
 const Categories = () => {

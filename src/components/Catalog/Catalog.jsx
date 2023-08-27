@@ -1,22 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPagination, fetchSearchQuery, fetchTrendFilms } from '../../store/operations';
+import { useSearchParams } from 'react-router-dom';
+import { setSearch } from '../../store/films/filmsSlice';
+import Categories from './Categories';
+import { fetchPagination, fetchSearchQuery, fetchTrendFilms } from '../../store/films/operations';
 import SearchForm from '../SearchForm';
 import { Container, Section } from './Catalog.styled';
 import { useEffect } from 'react';
 import FilmList from './FilmList';
 import Pagination from './Pagination';
-import Categories from './Categories';
-import { useSearchParams } from 'react-router-dom';
-import { setSearch } from '../../store/filmsSlice';
 
 const Catalog = () => {
-  const arrayFilms = useSelector(state => state.arrayFilms);
-  const page = useSelector(state => state.pagination.page);
-  const totalPages = useSelector(state => state.pagination.totalPages);
-  const lastFetch = useSelector(state => state.lastFetch);
-  const isPaginated = useSelector(state => state.pagination.isPaginated);
-  const isLoading = useSelector(state => state.isLoading);
-  const search = useSelector(state => state.search);
+  const arrayFilms = useSelector(state => state.films.arrayFilms);
+  const page = useSelector(state => state.films.pagination.page);
+  const totalPages = useSelector(state => state.films.pagination.totalPages);
+  const lastFetch = useSelector(state => state.films.lastFetch);
+  const isPaginated = useSelector(state => state.films.pagination.isPaginated);
+  const isLoading = useSelector(state => state.films.isLoading);
+  const search = useSelector(state => state.films.search);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 

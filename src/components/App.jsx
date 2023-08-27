@@ -1,19 +1,34 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import '../index.css';
 import SharedLayout from './SharedLayout';
 import Home from './Home';
+import PrivateRoute from './PrivateRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserdata } from '../store/auth/operations';
 
 const Catalog = lazy(() => import('./Catalog'));
 const FilmDetails = lazy(() => import('./FilmDetails'));
 const Actors = lazy(() => import('./Actors'));
 
 function App() {
+  const email = useSelector(state => state.auth.email);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (email && email !== 'guest') {
+      dispatch(fetchUserdata(email));
+    }
+  }, [email, dispatch]);
+
+  useEffect(() => {});
   return (
     <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
+          <Route path="login" element={<PrivateRoute />} />
+          <Route path="userinfo" element={<PrivateRoute />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="catalog/:filmId" element={<FilmDetails />} />
           <Route path="catalog/:filmId/actors" element={<Actors />} />

@@ -19,7 +19,7 @@ import {
 } from './FilmDetails.styled';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFilmById } from '../../store/operations';
+import { fetchFilmById } from '../../store/films/operations';
 import { RxCross1 } from 'react-icons/rx';
 import detailPoster from '../../img/detailPoster/img_poster.jpg';
 import { Skeleton } from '@mui/material';
@@ -29,7 +29,7 @@ const BASE_URL = 'https://image.tmdb.org/t/p/original';
 const FilmDetails = () => {
   const { filmId } = useParams();
   const dispatch = useDispatch();
-  const filmDetails = useSelector(state => state.filmDetails);
+  const filmDetails = useSelector(state => state.films.filmDetails);
   const location = useLocation();
   const backLink = location.state?.from ?? '/catalog';
   const [loadImg, setLoadImg] = useState(false);

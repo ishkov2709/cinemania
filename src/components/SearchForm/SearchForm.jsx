@@ -3,7 +3,7 @@ import { Form, Input, BtnForm } from './SearchForm.styled';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { setSearch } from '../../store/filmsSlice';
+import { setSearch } from '../../store/films/filmsSlice';
 
 const SearchForm = () => {
   const navigate = useNavigate();

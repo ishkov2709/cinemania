@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import initialState from './initialState';
+import initialState from '../initialState';
 import {
   fetchFilmActors,
   fetchFilmById,
@@ -121,7 +121,7 @@ const handleFetchSearchQueryRejected = (state, { payload }) => {
 
 const filmsSlice = createSlice({
   name: 'films',
-  initialState,
+  initialState: initialState,
   reducers: {
     increment: (state, { payload }) => {
       state.pagination.isPaginated = true;
