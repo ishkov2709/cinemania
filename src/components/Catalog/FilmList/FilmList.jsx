@@ -11,7 +11,7 @@ const FilmList = ({ films }) => {
         <Item
           key={id}
           id={id}
-          poster={poster_path ? `${BASE_URL}${poster_path}` : basePoster}
+          poster_path={poster_path ? `${BASE_URL}${poster_path}` : basePoster}
           title={title}
         />
       ))}

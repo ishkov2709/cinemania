@@ -30,7 +30,7 @@ const Header = () => {
           <FavLogWrapper>
             {isLoggedIn ? (
               <>
-                <Link to="/">
+                <Link to="favorites">
                   <BsBookmark size={35} color="#ffffff" />
                 </Link>
                 <UserInfoLink to="userinfo" state={{ from: location }}>

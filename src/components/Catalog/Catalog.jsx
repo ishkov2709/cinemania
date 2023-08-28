@@ -8,6 +8,7 @@ import { Container, Section } from './Catalog.styled';
 import { useEffect } from 'react';
 import FilmList from './FilmList';
 import Pagination from './Pagination';
+import { TailSpin } from 'react-loader-spinner';
 
 const Catalog = () => {
   const arrayFilms = useSelector(state => state.films.arrayFilms);
@@ -42,9 +43,19 @@ const Catalog = () => {
       <Container className="container">
         <SearchForm />
         <Categories />
-
-        {arrayFilms && <FilmList films={arrayFilms} />}
-
+        {isLoading && (
+          <TailSpin
+            height="80"
+            width="80"
+            color="#08B275"
+            ariaLabel="tail-spin-loading"
+            radius="1"
+            wrapperStyle={{ padding: '40px 0', display: 'flex', justifyContent: 'center' }}
+            wrapperClass=""
+            visible={true}
+          />
+        )}
+        {arrayFilms && !isLoading && <FilmList films={arrayFilms} />}
         {totalPages > 1 && !isLoading && <Pagination />}
       </Container>
     </Section>

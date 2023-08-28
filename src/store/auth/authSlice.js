@@ -30,6 +30,7 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.email = 'guest';
       state.name = 'Guest';
+      state.favFilms = [];
     },
     logOut: state => {
       state.email = null;
@@ -43,6 +44,9 @@ const authSlice = createSlice({
     addToFav: (state, { payload }) => {
       state.favFilms.push(payload);
     },
+    delAsFav: (state, { payload }) => {
+      state.favFilms = [...state.favFilms.filter(el => el.id !== payload)];
+    },
   },
   extraReducers: builder => {
     builder.addCase(fetchUserdata.fulfilled, handleFetchUserdataFulfilled);
@@ -51,4 +55,4 @@ const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
-export const { logInSucces, logInError, guestAuth, logOut, addToFav } = authSlice.actions;
+export const { logInSucces, logInError, guestAuth, logOut, addToFav, delAsFav } = authSlice.actions;

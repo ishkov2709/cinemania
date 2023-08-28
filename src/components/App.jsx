@@ -6,6 +6,7 @@ import Home from './Home';
 import PrivateRoute from './PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserdata } from '../store/auth/operations';
+import RestrictedRoute from './RestrictedRoute';
 
 const Catalog = lazy(() => import('./Catalog'));
 const FilmDetails = lazy(() => import('./FilmDetails'));
@@ -32,6 +33,7 @@ function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="catalog/:filmId" element={<FilmDetails />} />
           <Route path="catalog/:filmId/actors" element={<Actors />} />
+          <Route path="favorites" element={<RestrictedRoute />} />
         </Route>
       </Routes>
     </div>

@@ -1,13 +1,13 @@
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { useState } from 'react';
 import { DetailsLink, FavBtn, Img, ImgWrapper, ListItem, Title } from './Item.styled';
 import { useLocation } from 'react-router-dom';
 import { Skeleton } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToFav } from '../../../../store/auth/authSlice';
+import { addToFav, delAsFav } from '../../../../store/auth/authSlice';
 import { putUserdata } from '../../../../store/auth/operations';
 
-const Item = ({ id, poster, title }) => {
+const Item = ({ id, poster_path, title }) => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const favFilms = useSelector(state => state.auth.favFilms);
   const userId = useSelector(state => state.auth.userId);
@@ -20,10 +20,18 @@ const Item = ({ id, poster, title }) => {
     setLoadImg(true);
   };
 
-  const handleFavClick = e => {
+  const handleAddFavClick = e => {
     e.preventDefault();
-    dispatch(addToFav({ id, poster, title }));
-    dispatch(putUserdata({ userId, email, films: [...favFilms, { id, poster, title }] }));
+    dispatch(addToFav({ id, poster_path, title }));
+    if (email !== 'guest')
+      dispatch(putUserdata({ userId, email, films: [...favFilms, { id, poster_path, title }] }));
+  };
+
+  const handleDelFavClick = e => {
+    e.preventDefault();
+    dispatch(delAsFav(id));
+    if (email !== 'guest')
+      dispatch(putUserdata({ userId, email, films: [...favFilms.filter(el => el.id !== id)] }));
   };
 
   return (
@@ -40,11 +48,17 @@ const Item = ({ id, poster, title }) => {
             />
           )}
 
-          <Img src={poster} alt={title} width={161} onLoad={handleImgLoad} loadImg={loadImg} />
+          <Img src={poster_path} alt={title} width={161} onLoad={handleImgLoad} loadImg={loadImg} />
         </ImgWrapper>
-        {isLoggedIn && (
-          <FavBtn type="button" onClick={handleFavClick}>
+        {isLoggedIn && !favFilms?.find(el => el.id === id) && (
+          <FavBtn type="button" onClick={handleAddFavClick}>
             <AiOutlineHeart size={24} color="#ffffff" />
+          </FavBtn>
+        )}
+
+        {isLoggedIn && favFilms?.find(el => el.id === id) && (
+          <FavBtn type="button" onClick={handleDelFavClick}>
+            <AiFillHeart size={24} color="#881313" />
           </FavBtn>
         )}
         <Title>{title}</Title>
