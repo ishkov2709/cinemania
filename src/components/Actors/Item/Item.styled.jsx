@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ItemWrapper = styled.li`
   background-color: rgb(255, 255, 255);
@@ -10,6 +10,12 @@ export const ItemWrapper = styled.li`
 
   border: 1px solid #000;
   border-radius: 8px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 204px;
+    }
+  }
 `;
 
 export const ImgWrapper = styled.div`
@@ -17,6 +23,13 @@ export const ImgWrapper = styled.div`
   height: 158px;
 
   overflow: hidden;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 204px;
+      height: 216px;
+    }
+  }
 `;
 
 export const Img = styled.img``;
@@ -32,9 +45,21 @@ export const HeroName = styled.h4`
   font-size: 24px;
 
   margin-bottom: 6px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 32px;
+    }
+  }
 `;
 
 export const TrueName = styled.p`
   font-weight: 300;
   font-size: 14px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 16px;
+    }
+  }
 `;

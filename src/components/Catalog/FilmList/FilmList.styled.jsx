@@ -15,4 +15,11 @@ export const List = styled.ul`
       justify-content: center;
     }
   }
+
+  @media screen and (min-width: 744px) {
+    & {
+      column-gap: 48px;
+      row-gap: 24px;
+    }
+  }
 `;

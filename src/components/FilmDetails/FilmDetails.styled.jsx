@@ -10,6 +10,12 @@ export const Section = styled.section`
 
 export const Container = styled.div`
   max-width: 390px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      max-width: 744px;
+    }
+  }
 `;
 
 export const ContentBox = styled.div`
@@ -23,6 +29,12 @@ export const ContentBox = styled.div`
   backdrop-filter: blur(8px);
 
   border-radius: 12px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      padding: 60px 120px 100px 120px;
+    }
+  }
 `;
 
 export const CloseLink = styled(Link)`
@@ -30,6 +42,13 @@ export const CloseLink = styled(Link)`
   top: 12px;
   right: 12px;
   color: #000;
+
+  @media screen and (min-width: 744px) {
+    & {
+      top: 24px;
+      right: 24px;
+    }
+  }
 `;
 
 export const ImgWrapper = styled.div`
@@ -42,6 +61,14 @@ export const ImgWrapper = styled.div`
   border-radius: 8px;
 
   overflow: hidden;
+
+  @media screen and (min-width: 744px) {
+    & {
+      max-height: 336px;
+
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 export const Img = styled.img`
@@ -69,11 +96,23 @@ export const TitleRateWrapper = styled.div`
   color: #000;
 
   margin-bottom: 6px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      margin-bottom: 12px;
+    }
+  }
 `;
 
 export const Title = styled.h2`
   font-weight: 400;
   font-size: 32px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 48px;
+    }
+  }
 `;
 
 export const RatingWrapper = styled.div``;
@@ -90,6 +129,14 @@ export const Description = styled.p`
   font-size: 10px;
 
   margin-bottom: 12px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 20px;
+
+      margin-bottom: 16px;
+    }
+  }
 `;
 
 export const Subtitle = styled.h3`
@@ -99,6 +146,14 @@ export const Subtitle = styled.h3`
   font-size: 14px;
 
   margin-bottom: 12px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 24px;
+
+      margin-bottom: 12px;
+    }
+  }
 `;
 
 export const Generes = styled.p`
@@ -107,6 +162,14 @@ export const Generes = styled.p`
   font-size: 14px;
 
   margin-bottom: 18px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 24px;
+
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 export const ActorsLink = styled(Link)`
@@ -115,7 +178,7 @@ export const ActorsLink = styled(Link)`
   align-items: center;
 
   width: 146px;
-  height: 39px;
+  height: 40px;
 
   margin: 0 auto;
 
@@ -125,6 +188,15 @@ export const ActorsLink = styled(Link)`
 
   border: 1px solid #000;
   border-radius: 8px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 236px;
+      height: 60px;
+
+      font-size: 32px;
+    }
+  }
 `;
 
 export const SkeletonLoader = styled(Skeleton)`

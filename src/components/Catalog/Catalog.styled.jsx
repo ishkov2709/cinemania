@@ -16,4 +16,15 @@ export const Container = styled.div`
       overflow: scroll;
     }
   }
+
+  @media screen and (min-width: 744px) {
+    & {
+      gap: 140px;
+      max-width: 744px;
+      height: calc(100vh - 110px);
+      overflow: scroll;
+
+      padding: 0 74px;
+    }
+  }
 `;

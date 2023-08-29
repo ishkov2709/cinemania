@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import FilmList from './FilmList';
 import Pagination from './Pagination';
 import { TailSpin } from 'react-loader-spinner';
+import ResolutionListener from '../ResolutionListener';
 
 const Catalog = () => {
   const arrayFilms = useSelector(state => state.films.arrayFilms);
@@ -41,7 +42,7 @@ const Catalog = () => {
   return (
     <Section>
       <Container className="container">
-        <SearchForm />
+        <ResolutionListener component={SearchForm} position="catalog" />
         <Categories />
         {isLoading && (
           <TailSpin

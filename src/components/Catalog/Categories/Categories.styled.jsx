@@ -4,6 +4,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      gap: 24px;
+    }
+  }
 `;
 
 export const Btn = styled.button`
@@ -21,4 +27,14 @@ export const Btn = styled.button`
 
   text-align: center;
   text-decoration: none;
+
+  @media screen and (min-width: 744px) {
+    & {
+      min-width: calc((100% - 48px) / 3);
+      padding: 18px 8px;
+      font-size: 16px;
+
+      border-radius: 12px;
+    }
+  }
 `;

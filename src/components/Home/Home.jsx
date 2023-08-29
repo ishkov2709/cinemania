@@ -1,12 +1,13 @@
 import { Typography } from '@mui/material';
 import * as Style from './Home.styled';
 import SearchForm from '../SearchForm';
+import ResolutionListener from '../ResolutionListener';
 
 const Home = () => {
   return (
     <Style.Section>
       <Style.Container className="container">
-        <SearchForm />
+        <ResolutionListener component={SearchForm} position="home" />
 
         <Typography
           variant="h1"

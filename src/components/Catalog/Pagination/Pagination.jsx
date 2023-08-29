@@ -9,20 +9,30 @@ const Pagination = () => {
   const totalPages = useSelector(state => state.films.pagination.totalPages);
   const dispatch = useDispatch();
 
+  const changeIconSizeOneTap = () => {
+    if (window.innerWidth < 744) return 22;
+    if (window.innerWidth >= 744) return 36;
+  };
+
+  const changeIconSizeDoubleTap = () => {
+    if (window.innerWidth < 744) return 36;
+    if (window.innerWidth >= 744) return 48;
+  };
+
   return (
     <PagWrapper>
       <Btn disabled={page - 1 <= 0} onClick={() => dispatch(decrement(1))}>
-        <SlArrowLeft size={22} />
+        <SlArrowLeft size={changeIconSizeOneTap()} />
       </Btn>
       <Btn disabled={page - 2 <= 0} onClick={() => dispatch(decrement(2))}>
-        <RxDoubleArrowLeft size={36} />
+        <RxDoubleArrowLeft size={changeIconSizeDoubleTap()} />
       </Btn>
       <Counter>{page}</Counter>
       <Btn disabled={page + 2 > totalPages} onClick={() => dispatch(increment(2))}>
-        <RxDoubleArrowRight size={36} />
+        <RxDoubleArrowRight size={changeIconSizeDoubleTap()} />
       </Btn>
       <Btn disabled={page + 1 > totalPages} onClick={() => dispatch(increment(1))}>
-        <SlArrowRight size={22} />
+        <SlArrowRight size={changeIconSizeOneTap()} />
       </Btn>
     </PagWrapper>
   );

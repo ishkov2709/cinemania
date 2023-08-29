@@ -20,6 +20,11 @@ export const DetailsLink = styled(Link)`
   border-radius: 8px;
 
   overflow: hidden;
+
+  @media screen and (min-width: 744px) {
+    width: 272px;
+    height: 400px;
+  }
 `;
 
 export const ImgWrapper = styled.div`
@@ -66,4 +71,10 @@ export const Title = styled.p`
   font-size: 20px;
 
   text-align: center;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 28px;
+    }
+  }
 `;

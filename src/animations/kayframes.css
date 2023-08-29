@@ -19,3 +19,35 @@
     background-size: cover;
   }
 }
+
+@keyframes changeBgTabFirstTheme {
+  0% {
+    background-image: url('../img/background/tab/img_bg_tab_1.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/tab/img_bg_tab_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/tab/img_bg_tab_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/tab/img_bg_tab_1.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes smoothOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

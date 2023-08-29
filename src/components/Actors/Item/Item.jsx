@@ -9,15 +9,30 @@ const Item = ({ character, profile_path, name }) => {
     setLoadImg(true);
   };
 
+  const changeWidthSkeletonLoader = () => {
+    if (window.innerWidth < 744) return 147;
+    if (window.innerWidth >= 744) return 204;
+  };
+
+  const changeHeightSkeletonLoader = () => {
+    if (window.innerHeight < 744) return 158;
+    if (window.innerHeight >= 744) return 316;
+  };
+
   return (
     <ItemWrapper>
       <ImgWrapper>
-        <Img src={profile_path} width={147} loadImg={loadImg} onLoad={handleLoadImg} />
+        <Img
+          src={profile_path}
+          width={changeWidthSkeletonLoader()}
+          loadImg={loadImg}
+          onLoad={handleLoadImg}
+        />
         {!loadImg && (
           <Skeleton
             variant="rectangular"
-            width={147}
-            height={158}
+            width={changeWidthSkeletonLoader()}
+            height={changeHeightSkeletonLoader()}
             animation="wave"
             sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
           />

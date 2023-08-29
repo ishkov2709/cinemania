@@ -3,9 +3,11 @@ import { MdDiamond } from 'react-icons/md';
 import { BsBookmark } from 'react-icons/bs';
 import { SlLogin } from 'react-icons/sl';
 import { useDispatch, useSelector } from 'react-redux';
-import { FavLogWrapper, HeaderWrapper, Img, Nav, UserInfoLink } from './Header.styled';
+import { FavLogWrapper, HeaderWrapper, Img, Nav, ToMainLink, UserInfoLink } from './Header.styled';
 import { reset } from '../../store/films/filmsSlice';
 import { FaUserAlt } from 'react-icons/fa';
+import ResolutionListener from '../ResolutionListener';
+import SearchForm from '../SearchForm/SearchForm';
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,9 +26,12 @@ const Header = () => {
     <HeaderWrapper>
       <div className="container">
         <Nav>
-          <Link to="/" onClick={handleReset}>
+          <ToMainLink to="/" onClick={handleReset}>
             <MdDiamond size={50} color="#ffffff" />
-          </Link>
+          </ToMainLink>
+
+          <ResolutionListener component={SearchForm} position="header" />
+
           <FavLogWrapper>
             {isLoggedIn ? (
               <>

@@ -8,10 +8,25 @@ export const HeaderWrapper = styled.header`
   padding: 28px 0;
 `;
 
+export const ToMainLink = styled(Link)`
+  @media screen and (min-width: 744px) {
+    & {
+      margin-right: 28px;
+    }
+  }
+`;
+
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 744px) {
+    & {
+      justify-content: start;
+      gap: 20px;
+    }
+  }
 `;
 
 export const FavLogWrapper = styled.div`

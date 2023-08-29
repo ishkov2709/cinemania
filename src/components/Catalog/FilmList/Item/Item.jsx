@@ -34,6 +34,21 @@ const Item = ({ id, poster_path, title }) => {
       dispatch(putUserdata({ userId, email, films: [...favFilms.filter(el => el.id !== id)] }));
   };
 
+  const changeIconSizeFav = () => {
+    if (window.innerWidth < 744) return 24;
+    if (window.innerWidth >= 744) return 40;
+  };
+
+  const changeWidthSkeletonLoader = () => {
+    if (window.innerWidth < 744) return 161;
+    if (window.innerWidth >= 744) return 272;
+  };
+
+  const changeHeightSkeletonLoader = () => {
+    if (window.innerHeight < 744) return 221;
+    if (window.innerHeight >= 744) return 400;
+  };
+
   return (
     <ListItem>
       <DetailsLink to={`/catalog/${id}`} state={{ from: location }}>
@@ -41,8 +56,8 @@ const Item = ({ id, poster_path, title }) => {
           {!loadImg && (
             <Skeleton
               variant="rectangular"
-              width={161}
-              height={221}
+              width={changeWidthSkeletonLoader()}
+              height={changeHeightSkeletonLoader()}
               animation="wave"
               sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
             />
@@ -52,13 +67,13 @@ const Item = ({ id, poster_path, title }) => {
         </ImgWrapper>
         {isLoggedIn && !favFilms?.find(el => el.id === id) && (
           <FavBtn type="button" onClick={handleAddFavClick}>
-            <AiOutlineHeart size={24} color="#ffffff" />
+            <AiOutlineHeart size={changeIconSizeFav()} color="#ffffff" />
           </FavBtn>
         )}
 
         {isLoggedIn && favFilms?.find(el => el.id === id) && (
           <FavBtn type="button" onClick={handleDelFavClick}>
-            <AiFillHeart size={24} color="#881313" />
+            <AiFillHeart size={changeIconSizeFav()} color="#881313" />
           </FavBtn>
         )}
         <Title>{title}</Title>

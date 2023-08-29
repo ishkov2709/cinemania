@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 export const Form = styled.form`
   position: relative;
+
+  width: 100%;
 `;
 
 export const Input = styled.input`
@@ -42,4 +44,6 @@ export const BtnForm = styled.button`
   border: none;
 
   padding: 0;
+
+  animation: smoothOpacity 2000ms 1 linear;
 `;

@@ -5,6 +5,12 @@ export const PagWrapper = styled.div`
   justify-content: space-between;
 
   margin-bottom: 60px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      margin-bottom: 160px;
+    }
+  }
 `;
 
 export const Counter = styled.span`
@@ -21,6 +27,15 @@ export const Counter = styled.span`
   border-radius: 8px;
 
   text-align: center;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 269px;
+      height: 65px;
+
+      font-size: 48px;
+    }
+  }
 `;
 
 export const Btn = styled.button`
@@ -33,11 +48,22 @@ export const Btn = styled.button`
 
   padding: 0;
 
-  background: rgba(255, 255, 255, 0.5);
+  background: #fff;
   color: #000;
 
   border: none;
   border-radius: 8px;
 
   overflow: hidden;
+
+  &:disabled {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 65px;
+      height: 65px;
+    }
+  }
 `;

@@ -13,6 +13,15 @@ export const MainWrapper = styled.div`
     }
   }
 
+  @media screen and (min-width: 744px) {
+    & {
+      display: flex;
+      flex-direction: column;
+
+      animation: changeBgTabFirstTheme 10s infinite linear;
+    }
+  }
+
   &::before {
     content: '';
     position: fixed;

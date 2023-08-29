@@ -56,4 +56,10 @@ export const List = styled.ul`
       margin: 0 auto;
     }
   }
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 100%;
+    }
+  }
 `;
