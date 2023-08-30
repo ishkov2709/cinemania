@@ -5,6 +5,12 @@ import { TbMovieOff } from 'react-icons/tb';
 
 const Favorites = () => {
   const favFilms = useSelector(state => state.auth.favFilms);
+
+  const changeIconSize = () => {
+    if (window.innerWidth < 744) return 72;
+    if (window.innerWidth >= 744) return 96;
+  };
+
   return (
     <Section>
       <Container className="container">
@@ -14,7 +20,7 @@ const Favorites = () => {
 
         {!favFilms?.length && (
           <EmptyWrapper>
-            <TbMovieOff size={72} color="#fff" />
+            <TbMovieOff size={changeIconSize()} color="#fff" />
             <EmptyText>Список фільмів порожній...</EmptyText>
           </EmptyWrapper>
         )}

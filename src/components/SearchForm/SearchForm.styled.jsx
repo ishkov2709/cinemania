@@ -33,6 +33,13 @@ export const Input = styled.input`
 
     border: 2px solid #e7671d;
   }
+
+  @media screen and (min-width: 744px) {
+    &,
+    &::placeholder {
+      font-size: 24px;
+    }
+  }
 `;
 
 export const BtnForm = styled.button`

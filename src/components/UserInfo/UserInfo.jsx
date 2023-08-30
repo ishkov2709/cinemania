@@ -34,12 +34,18 @@ const UserInfo = () => {
   const errorResponseGoogle = response => {
     dispatch(logInError(response));
   };
+
+  const changeIconSize = () => {
+    if (window.innerWidth < 744) return 30;
+    if (window.innerWidth >= 744) return 50;
+  };
+
   return (
     <Section>
       <Container className="container">
         <ContentBox>
           <CloseLink to={backLink}>
-            <RxCross1 size={30} />
+            <RxCross1 size={changeIconSize()} />
           </CloseLink>
 
           <ImgWrapper>

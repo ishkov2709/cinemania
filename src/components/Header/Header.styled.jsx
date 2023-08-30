@@ -6,15 +6,15 @@ export const HeaderWrapper = styled.header`
   z-index: 2;
 
   padding: 28px 0;
-`;
 
-export const ToMainLink = styled(Link)`
   @media screen and (min-width: 744px) {
     & {
-      margin-right: 28px;
+      padding: 48px 0;
     }
   }
 `;
+
+export const ToMainLink = styled(Link)``;
 
 export const Nav = styled.nav`
   display: flex;
@@ -24,7 +24,7 @@ export const Nav = styled.nav`
   @media screen and (min-width: 744px) {
     & {
       justify-content: start;
-      gap: 20px;
+      gap: 24px;
     }
   }
 `;
@@ -34,8 +34,20 @@ export const FavLogWrapper = styled.div`
   gap: 12px;
 `;
 
+export const FavLink = styled(Link)`
+  @media screen and (min-width: 744px) {
+    & {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
+
 export const UserInfoLink = styled(Link)`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 40px;
   height: 40px;
@@ -46,6 +58,13 @@ export const UserInfoLink = styled(Link)`
   border-radius: 50%;
 
   overflow: hidden;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 70px;
+      height: 70px;
+    }
+  }
 `;
 
 export const Img = styled.img``;

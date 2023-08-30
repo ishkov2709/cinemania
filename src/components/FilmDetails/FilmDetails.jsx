@@ -44,6 +44,11 @@ const FilmDetails = () => {
     if (filmId) dispatch(fetchFilmById(filmId));
   }, [dispatch, filmId]);
 
+  const changeIconSize = () => {
+    if (window.innerWidth < 744) return 30;
+    if (window.innerWidth >= 744) return 50;
+  };
+
   if (filmDetails !== null) {
     const { backdrop_path, release_date, title, vote_average, overview, genres } = filmDetails;
     return (
@@ -51,7 +56,7 @@ const FilmDetails = () => {
         <Container className="container">
           <ContentBox>
             <CloseLink to={backLink}>
-              <RxCross1 size={30} />
+              <RxCross1 size={changeIconSize()} />
             </CloseLink>
 
             {isLoading && (

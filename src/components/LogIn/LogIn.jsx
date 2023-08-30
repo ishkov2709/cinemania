@@ -27,12 +27,17 @@ const LogIn = () => {
     navigate('/catalog');
   };
 
+  const changeIconSize = () => {
+    if (window.innerWidth < 744) return 30;
+    if (window.innerWidth >= 744) return 50;
+  };
+
   return (
     <Section>
       <Container className="container">
         <ContentBox>
           <CloseLink to={backLink}>
-            <RxCross1 size={30} />
+            <RxCross1 size={changeIconSize()} />
           </CloseLink>
           <Title>Вхiд</Title>
           <GoogleLogin onSuccess={responseGoogle} onError={errorResponseGoogle} />

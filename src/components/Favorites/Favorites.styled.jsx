@@ -7,13 +7,18 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  overflow-y: scroll;
-
   @media screen and (max-width: 743px) {
     & {
       max-width: 390px;
-      height: calc(100vh - 110px);
-      overflow: scroll;
+    }
+  }
+
+  @media screen and (min-width: 744px) {
+    & {
+      max-width: none;
+      width: 744px;
+
+      padding: 0 74px;
     }
   }
 `;
@@ -25,6 +30,12 @@ export const Title = styled.h2`
   text-align: center;
 
   margin-bottom: 46px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 40px;
+    }
+  }
 `;
 
 export const EmptyWrapper = styled.div`
@@ -32,8 +43,24 @@ export const EmptyWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 18px;
+
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      gap: 26px;
+
+      margin-bottom: 100px;
+    }
+  }
 `;
 
 export const EmptyText = styled.p`
   font-size: 18px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 26px;
+    }
+  }
 `;

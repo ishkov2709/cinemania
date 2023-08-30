@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 export const MainWrapper = styled.div`
   position: relative;
-  min-height: 100vh;
+
+  overflow-y: scroll;
 
   @media screen and (max-width: 743px) {
     & {
@@ -43,4 +44,10 @@ export const CustomWrapper = styled.main`
 
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 744px) {
+    & {
+      height: calc(100vh - 166px);
+    }
+  }
 `;

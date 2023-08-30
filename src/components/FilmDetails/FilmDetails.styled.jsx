@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 export const Section = styled.section`
   padding-bottom: 24px;
 
-  overflow: scroll;
+  @media screen and (min-width: 744px) {
+    & {
+      padding-bottom: 120px;
+    }
+  }
 `;
 
 export const Container = styled.div`

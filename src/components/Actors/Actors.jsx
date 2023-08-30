@@ -25,15 +25,20 @@ const Actors = () => {
     dispatch(fetchFilmActors(filmId));
   }, [filmId, dispatch]);
 
+  const changeIconSize = () => {
+    if (window.innerWidth < 744) return 30;
+    if (window.innerWidth >= 744) return 50;
+  };
+
   return (
     <Section>
       <Container className="container">
         <PageWrapper>
           <BackLink to={backLink}>
-            <PiArrowBendUpLeftLight size={30} />
+            <PiArrowBendUpLeftLight size={changeIconSize()} />
           </BackLink>
           <CloseLink to={closeLink}>
-            <RxCross1 size={30} />
+            <RxCross1 size={changeIconSize()} />
           </CloseLink>
 
           {isLoading && (
