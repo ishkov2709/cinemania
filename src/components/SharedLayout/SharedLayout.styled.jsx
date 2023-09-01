@@ -3,23 +3,27 @@ import styled from '@emotion/styled';
 export const MainWrapper = styled.div`
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+
   overflow-y: scroll;
+  overflow-x: hidden;
 
   @media screen and (max-width: 743px) {
     & {
-      display: flex;
-      flex-direction: column;
-
       animation: changeBgMobFirstTheme 10s infinite linear;
     }
   }
 
   @media screen and (min-width: 744px) {
     & {
-      display: flex;
-      flex-direction: column;
-
       animation: changeBgTabFirstTheme 10s infinite linear;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      animation: changeBgDesktopFirstTheme 10s infinite linear;
     }
   }
 
@@ -47,7 +51,13 @@ export const CustomWrapper = styled.main`
 
   @media screen and (min-width: 744px) {
     & {
-      height: calc(100vh - 166px);
+      height: calc(100vh - 150px);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      height: calc(100vh - 222px);
     }
   }
 `;

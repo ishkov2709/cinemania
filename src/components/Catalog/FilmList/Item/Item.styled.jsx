@@ -25,6 +25,11 @@ export const DetailsLink = styled(Link)`
     width: 272px;
     height: 400px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 271px;
+    height: 390px;
+  }
 `;
 
 export const ImgWrapper = styled.div`
@@ -75,6 +80,12 @@ export const Title = styled.p`
   @media screen and (min-width: 744px) {
     & {
       font-size: 28px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 32px;
     }
   }
 `;

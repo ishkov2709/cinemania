@@ -17,7 +17,16 @@ export const Container = styled.div`
 
   @media screen and (min-width: 744px) {
     & {
-      max-width: 744px;
+      max-width: none;
+      width: 744px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 1440px;
+
+      padding: 0 142px;
     }
   }
 `;
@@ -37,6 +46,11 @@ export const ContentBox = styled.div`
   @media screen and (min-width: 744px) {
     & {
       padding: 60px 120px 100px 120px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
     }
   }
 `;
@@ -87,6 +101,34 @@ export const YearField = styled.p`
 
   font-weight: 500;
   font-size: 16px;
+
+  &.second {
+    display: none;
+  }
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      position: static;
+      bottom: 0;
+      right: 0;
+
+      color: #000;
+    }
+
+    &:first {
+      display: none;
+    }
+
+    &.second {
+      display: block;
+    }
+  }
 `;
 
 export const Year = styled.span`
@@ -134,11 +176,25 @@ export const Description = styled.p`
 
   margin-bottom: 12px;
 
+  &.second {
+    display: none;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       font-size: 20px;
 
       margin-bottom: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    &.first {
+      display: none;
+    }
+
+    &.second {
+      display: block;
     }
   }
 `;

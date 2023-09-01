@@ -22,4 +22,13 @@ export const List = styled.ul`
       row-gap: 24px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      column-gap: 24px;
+      row-gap: 50px;
+
+      margin: 0 auto 102px auto;
+    }
+  }
 `;

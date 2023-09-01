@@ -91,22 +91,29 @@ const FilmDetails = () => {
                       sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
                     />
                   )}
-                  <YearField>
+                  <YearField className="first">
                     Рік: <Year>{new Date(release_date).getFullYear()}</Year>
                   </YearField>
                 </ImgWrapper>
 
                 <TitleRateWrapper>
                   <Title>{title}</Title>
+
                   <RatingWrapper>
                     <Rating>{(vote_average * 10).toFixed()}%</Rating>
                   </RatingWrapper>
                 </TitleRateWrapper>
 
-                <Description>{overview}</Description>
+                <YearField className="second">
+                  Рік: <Year>{new Date(release_date).getFullYear()}</Year>
+                </YearField>
+
+                <Description className="first">{overview}</Description>
 
                 <Subtitle>Жанри:</Subtitle>
                 <Generes>{genres.map(el => el.name).join(', ')}</Generes>
+
+                <Description className="second">{overview}</Description>
 
                 <ActorsLink to="actors" state={{ from: location }}>
                   Актори

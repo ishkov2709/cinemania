@@ -12,9 +12,21 @@ export const HeaderWrapper = styled.header`
       padding: 48px 0;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding: 48px 0 120px 0;
+    }
+  }
 `;
 
-export const ToMainLink = styled(Link)``;
+export const ToMainLink = styled(Link)`
+  @media screen and (min-width: 1440px) {
+    & {
+      margin-right: 26px;
+    }
+  }
+`;
 
 export const Nav = styled.nav`
   display: flex;
@@ -25,6 +37,12 @@ export const Nav = styled.nav`
     & {
       justify-content: start;
       gap: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      gap: 20px;
     }
   }
 `;

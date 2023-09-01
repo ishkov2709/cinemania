@@ -10,6 +10,12 @@ export const Wrapper = styled.div`
       gap: 24px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      gap: 80px;
+    }
+  }
 `;
 
 export const Btn = styled.button`
@@ -35,6 +41,14 @@ export const Btn = styled.button`
       font-size: 16px;
 
       border-radius: 12px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      min-width: calc((100% - 160px) / 3);
+      padding: 30px;
+      font-size: 24px;
     }
   }
 `;

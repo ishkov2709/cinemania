@@ -11,6 +11,15 @@ export const PagWrapper = styled.div`
       margin-bottom: 160px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      justify-content: center;
+      gap: 4px;
+
+      margin-bottom: 40px;
+    }
+  }
 `;
 
 export const Counter = styled.span`
@@ -26,7 +35,9 @@ export const Counter = styled.span`
   border: 1px solid #000;
   border-radius: 8px;
 
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (min-width: 744px) {
     & {
@@ -34,6 +45,15 @@ export const Counter = styled.span`
       height: 65px;
 
       font-size: 48px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 331px;
+      height: 80px;
+
+      margin-right: 28px;
     }
   }
 `;
@@ -64,6 +84,17 @@ export const Btn = styled.button`
     & {
       width: 65px;
       height: 65px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 80px;
+      height: 80px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 28px;
     }
   }
 `;

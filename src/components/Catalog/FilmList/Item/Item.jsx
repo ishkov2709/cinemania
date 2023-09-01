@@ -42,11 +42,13 @@ const Item = ({ id, poster_path, title }) => {
   const changeWidthSkeletonLoader = () => {
     if (window.innerWidth < 744) return 161;
     if (window.innerWidth >= 744) return 272;
+    if (window.innerWidth >= 1440) return 271;
   };
 
   const changeHeightSkeletonLoader = () => {
     if (window.innerHeight < 744) return 221;
     if (window.innerHeight >= 744) return 400;
+    if (window.innerHeight >= 1440) return 390;
   };
 
   return (

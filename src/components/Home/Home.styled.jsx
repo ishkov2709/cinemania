@@ -12,6 +12,12 @@ export const Section = styled.section`
       padding-bottom: 100px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding-bottom: 24px;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -30,6 +36,12 @@ export const HeroTitle = styled(Typography)`
       font-size: 64px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      margin-left: 118px;
+    }
+  }
 `;
 
 export const HeroText = styled(Typography)`
@@ -41,7 +53,15 @@ export const HeroText = styled(Typography)`
     & {
       font-size: 32px;
 
-      margin-bottom: 126px;
+      margin-bottom: 100px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 796px;
+
+      margin-left: 118px;
     }
   }
 `;
@@ -70,6 +90,12 @@ export const BtnCatalog = styled(Link)`
       height: 90px;
 
       font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      margin: 0 0 0 auto;
     }
   }
 `;

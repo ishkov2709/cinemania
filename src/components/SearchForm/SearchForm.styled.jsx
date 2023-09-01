@@ -8,7 +8,7 @@ export const Form = styled.form`
 
 export const Input = styled.input`
   width: 100%;
-  padding: 8px 48px 10px 24px;
+  padding: 10px 48px 10px 24px;
 
   color: #000;
 

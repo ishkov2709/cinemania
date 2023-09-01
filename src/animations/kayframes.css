@@ -42,6 +42,28 @@
   }
 }
 
+@keyframes changeBgDesktopFirstTheme {
+  0% {
+    background-image: url('../img/background/desktop/img_bg_desktop_1.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/desktop/img_bg_desktop_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/desktop/img_bg_desktop_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/desktop/img_bg_desktop_1.jpg');
+    background-size: cover;
+  }
+}
+
 @keyframes smoothOpacity {
   0% {
     opacity: 0;
