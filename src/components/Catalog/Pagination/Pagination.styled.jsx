@@ -50,8 +50,8 @@ export const Counter = styled.span`
 
   @media screen and (min-width: 1440px) {
     & {
-      width: 331px;
-      height: 80px;
+      width: 220px;
+      height: 55px;
 
       margin-right: 28px;
     }
@@ -89,11 +89,11 @@ export const Btn = styled.button`
 
   @media screen and (min-width: 1440px) {
     & {
-      width: 80px;
-      height: 80px;
+      width: 55px;
+      height: 55px;
     }
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       margin-right: 28px;
     }
   }

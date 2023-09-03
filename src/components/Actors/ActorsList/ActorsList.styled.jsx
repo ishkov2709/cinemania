@@ -1,34 +1,33 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
-  width: 100%;
-
   display: flex;
   flex-wrap: wrap;
-  row-gap: 24px;
-  column-gap: 20px;
-
-  margin: 0 auto 36px auto;
+  gap: 24px;
 
   @media screen and (max-width: 389px) {
     & {
       justify-content: center;
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 390px) {
+    & {
+      width: 318px;
+      margin: 0 auto;
     }
   }
 
   @media screen and (min-width: 744px) {
     & {
-      column-gap: 48px;
-      row-gap: 24px;
+      width: 100%;
     }
   }
 
   @media screen and (min-width: 1440px) {
     & {
-      column-gap: 24px;
-      row-gap: 50px;
-
-      margin: 0 auto 51px auto;
+      gap: 20px;
     }
   }
 `;

@@ -13,7 +13,8 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     & {
-      gap: 80px;
+      justify-content: center;
+      gap: 40px;
     }
   }
 `;
@@ -46,9 +47,9 @@ export const Btn = styled.button`
 
   @media screen and (min-width: 1440px) {
     & {
-      min-width: calc((100% - 160px) / 3);
-      padding: 30px;
-      font-size: 24px;
+      min-width: 240px;
+      padding: 10px;
+      font-size: 18px;
     }
   }
 `;

@@ -40,6 +40,13 @@ export const Input = styled.input`
       font-size: 24px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    &,
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const BtnForm = styled.button`

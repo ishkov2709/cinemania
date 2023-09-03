@@ -65,6 +65,12 @@ export const ImgWrapper = styled.div`
   border-radius: 50%;
 
   overflow: hidden;
+
+  @media screen and (min-width: 1440px) {
+    & {
+      border: 4px solid #000;
+    }
+  }
 `;
 
 export const Img = styled.img``;
@@ -78,6 +84,12 @@ export const Name = styled.h2`
   @media screen and (min-width: 744px) {
     & {
       font-size: 28px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 18px;
     }
   }
 `;

@@ -15,10 +15,20 @@ export const Container = styled.div`
 
   @media screen and (min-width: 744px) {
     & {
+      gap: 140px;
       max-width: none;
       width: 744px;
 
       padding: 0 74px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      gap: 90px;
+      width: 1440px;
+
+      padding: 0 142px;
     }
   }
 `;
@@ -34,6 +44,14 @@ export const Title = styled.h2`
   @media screen and (min-width: 744px) {
     & {
       font-size: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 32px;
+
+      margin-bottom: 0;
     }
   }
 `;

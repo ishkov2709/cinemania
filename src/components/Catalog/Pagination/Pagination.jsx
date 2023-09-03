@@ -10,13 +10,13 @@ const Pagination = () => {
   const dispatch = useDispatch();
 
   const changeIconSizeOneTap = () => {
-    if (window.innerWidth >= 1440) return 48;
+    if (window.innerWidth >= 1440) return 32;
     if (window.innerWidth >= 744) return 36;
     if (window.innerWidth < 744) return 22;
   };
 
   const changeIconSizeDoubleTap = () => {
-    if (window.innerWidth >= 1440) return 64;
+    if (window.innerWidth >= 1440) return 42;
     if (window.innerWidth >= 744) return 48;
     if (window.innerWidth < 744) return 36;
   };

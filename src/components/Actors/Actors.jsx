@@ -3,19 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { fetchFilmActors } from '../../store/films/operations';
 import { useParams } from 'react-router-dom';
-import { BackLink, CloseLink, Container, List, PageWrapper, Section } from './Actors.styled';
-import baseImgActor from '../../img/photoActor/img_actor.jpg';
+import { BackLink, CloseLink, Container, PageWrapper, Section } from './Actors.styled';
 import { PiArrowBendUpLeftLight } from 'react-icons/pi';
 import { RxCross1 } from 'react-icons/rx';
-import Item from './Item';
 import { TailSpin } from 'react-loader-spinner';
-
-const BASE_URL = 'https://image.tmdb.org/t/p/original';
+import ActorsList from './ActorsList/ActorsList';
 
 const Actors = () => {
   const { filmId } = useParams();
   const dispatch = useDispatch();
-  const filmActors = useSelector(state => state.films.filmActors);
   const isLoading = useSelector(state => state.films.isLoading);
   const location = useLocation();
   const backLink = location.state?.from ?? '/catalog';
@@ -54,18 +50,7 @@ const Actors = () => {
             />
           )}
 
-          {filmActors?.length && !isLoading && (
-            <List>
-              {filmActors.map(({ id, character, name, profile_path }) => (
-                <Item
-                  key={id}
-                  character={character}
-                  name={name}
-                  profile_path={profile_path ? `${BASE_URL}${profile_path}` : baseImgActor}
-                />
-              ))}
-            </List>
-          )}
+          {!isLoading && <ActorsList />}
         </PageWrapper>
       </Container>
     </Section>

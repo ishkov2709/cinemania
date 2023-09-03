@@ -35,6 +35,11 @@ const UserInfo = () => {
     dispatch(logInError(response));
   };
 
+  const changeUserImgSize = () => {
+    if (window.innerWidth >= 1440) return 150;
+    if (window.innerWidth < 1440) return 210;
+  };
+
   const changeIconSize = () => {
     if (window.innerWidth < 744) return 30;
     if (window.innerWidth >= 744) return 50;
@@ -50,9 +55,9 @@ const UserInfo = () => {
 
           <ImgWrapper>
             {email !== 'guest' ? (
-              <Img src={imageUrl} alt={name} width={210} />
+              <Img src={imageUrl} alt={name} width={changeUserImgSize()} />
             ) : (
-              <FaUserAlt size={210} />
+              <FaUserAlt size={changeUserImgSize()} />
             )}
           </ImgWrapper>
 

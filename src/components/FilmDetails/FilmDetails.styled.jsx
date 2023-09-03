@@ -10,6 +10,12 @@ export const Section = styled.section`
       padding-bottom: 120px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding-bottom: 90px;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -51,6 +57,9 @@ export const ContentBox = styled.div`
 
   @media screen and (min-width: 1440px) {
     & {
+      min-height: auto;
+
+      padding: 116px 114px 80px 120px;
     }
   }
 `;
@@ -65,6 +74,18 @@ export const CloseLink = styled(Link)`
     & {
       top: 24px;
       right: 24px;
+    }
+  }
+`;
+
+export const ImgBaseInfoWrapper = styled.div`
+  @media screen and (min-width: 1440px) {
+    & {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+
+      margin-bottom: 24px;
     }
   }
 `;
@@ -87,11 +108,24 @@ export const ImgWrapper = styled.div`
       margin-bottom: 24px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 355px;
+      max-height: 200px;
+
+      margin-bottom: 0;
+
+      display: inline-block;
+    }
+  }
 `;
 
 export const Img = styled.img`
   display: ${({ loadImg }) => (loadImg ? 'block' : 'none')};
   width: 100%;
+
+  border-radius: 8px;
 `;
 
 export const YearField = styled.p`
@@ -121,18 +155,32 @@ export const YearField = styled.p`
       color: #000;
     }
 
-    &:first {
+    &.first {
       display: none;
     }
 
     &.second {
       display: block;
+
+      font-size: 18px;
+
+      margin-bottom: 24px;
     }
   }
 `;
 
 export const Year = styled.span`
   font-weight: 300;
+`;
+
+export const FlexDetailsWrapper = styled.div`
+  @media screen and (min-width: 1440px) {
+    & {
+      display: inline-block;
+
+      width: calc(100% - 335px);
+    }
+  }
 `;
 
 export const TitleRateWrapper = styled.div`
@@ -148,6 +196,12 @@ export const TitleRateWrapper = styled.div`
       margin-bottom: 12px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 export const Title = styled.h2`
@@ -157,6 +211,12 @@ export const Title = styled.h2`
   @media screen and (min-width: 744px) {
     & {
       font-size: 48px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 34px;
     }
   }
 `;
@@ -195,6 +255,10 @@ export const Description = styled.p`
 
     &.second {
       display: block;
+
+      font-size: 18px;
+
+      margin-bottom: 24px;
     }
   }
 `;
@@ -214,6 +278,14 @@ export const Subtitle = styled.h3`
       margin-bottom: 12px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 18px;
+
+      margin-bottom: 12px;
+    }
+  }
 `;
 
 export const Generes = styled.p`
@@ -228,6 +300,14 @@ export const Generes = styled.p`
       font-size: 24px;
 
       margin-bottom: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 18px;
+
+      margin-bottom: 0;
     }
   }
 `;
@@ -255,6 +335,25 @@ export const ActorsLink = styled(Link)`
       height: 60px;
 
       font-size: 32px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      margin: 0 0 0 auto;
+
+      width: 180px;
+      height: 50px;
+
+      font-size: 24px;
+    }
+  }
+`;
+
+export const ActorsLinkText = styled.span`
+  @media screen and (min-width: 1440px) {
+    & {
+      margin-right: 10px;
     }
   }
 `;

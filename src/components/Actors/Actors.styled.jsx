@@ -9,6 +9,12 @@ export const Section = styled.section`
       padding-bottom: 120px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding-bottom: 90px;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -18,6 +24,14 @@ export const Container = styled.div`
     & {
       max-width: none;
       width: 744px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 1440px;
+
+      padding: 0 142px;
     }
   }
 `;
@@ -35,6 +49,12 @@ export const PageWrapper = styled.div`
   @media screen and (min-width: 744px) {
     & {
       padding: 136px 18px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding: 116px 104px 80px 128px;
     }
   }
 `;
@@ -65,32 +85,6 @@ export const CloseLink = styled(Link)`
     & {
       top: 24px;
       right: 24px;
-    }
-  }
-`;
-
-export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-
-  @media screen and (max-width: 389px) {
-    & {
-      justify-content: center;
-      width: auto;
-    }
-  }
-
-  @media screen and (min-width: 390px) {
-    & {
-      width: 318px;
-      margin: 0 auto;
-    }
-  }
-
-  @media screen and (min-width: 744px) {
-    & {
-      width: 100%;
     }
   }
 `;

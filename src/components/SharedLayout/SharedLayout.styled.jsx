@@ -57,7 +57,7 @@ export const CustomWrapper = styled.main`
 
   @media screen and (min-width: 1440px) {
     & {
-      height: calc(100vh - 222px);
+      height: calc(100vh - 149px);
     }
   }
 `;

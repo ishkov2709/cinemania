@@ -35,20 +35,21 @@ const Item = ({ id, poster_path, title }) => {
   };
 
   const changeIconSizeFav = () => {
-    if (window.innerWidth < 744) return 24;
+    if (window.innerWidth >= 1440) return 30;
     if (window.innerWidth >= 744) return 40;
+    if (window.innerWidth < 744) return 24;
   };
 
   const changeWidthSkeletonLoader = () => {
-    if (window.innerWidth < 744) return 161;
+    if (window.innerWidth >= 1440) return 212;
     if (window.innerWidth >= 744) return 272;
-    if (window.innerWidth >= 1440) return 271;
+    if (window.innerWidth < 744) return 161;
   };
 
   const changeHeightSkeletonLoader = () => {
-    if (window.innerHeight < 744) return 221;
+    if (window.innerHeight >= 1440) return 300;
     if (window.innerHeight >= 744) return 400;
-    if (window.innerHeight >= 1440) return 390;
+    if (window.innerHeight < 744) return 221;
   };
 
   return (

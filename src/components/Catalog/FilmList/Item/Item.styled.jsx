@@ -27,8 +27,8 @@ export const DetailsLink = styled(Link)`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 271px;
-    height: 390px;
+    width: 212px;
+    height: 300px;
   }
 `;
 
@@ -85,7 +85,7 @@ export const Title = styled.p`
 
   @media screen and (min-width: 1440px) {
     & {
-      font-size: 32px;
+      font-size: 22px;
     }
   }
 `;

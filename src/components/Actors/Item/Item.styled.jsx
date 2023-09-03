@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export const ItemWrapper = styled.li`
-  background-color: rgb(255, 255, 255);
-  color: #000;
-
   width: 147px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
 
   overflow: hidden;
 
@@ -14,6 +14,12 @@ export const ItemWrapper = styled.li`
   @media screen and (min-width: 744px) {
     & {
       width: 204px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 168px;
     }
   }
 `;
@@ -30,12 +36,19 @@ export const ImgWrapper = styled.div`
       height: 216px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 168px;
+      height: 168px;
+    }
+  }
 `;
 
 export const Img = styled.img``;
 
 export const InitialsWrapper = styled.div`
-  padding: 6px 12px 16px 12px;
+  padding: 8px 12px;
 
   text-align: center;
 `;
@@ -49,6 +62,12 @@ export const HeroName = styled.h4`
   @media screen and (min-width: 744px) {
     & {
       font-size: 32px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      font-size: 16px;
     }
   }
 `;

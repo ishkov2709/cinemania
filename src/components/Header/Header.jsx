@@ -34,11 +34,13 @@ const Header = () => {
   const changeIconSizeImg = () => {
     if (window.innerWidth < 744) return 40;
     if (window.innerWidth >= 744) return 70;
+    if (window.innerWidth >= 1440) return 50;
   };
 
   const changeIconSizeFav = () => {
-    if (window.innerWidth < 744) return 35;
+    if (window.innerWidth >= 1440) return 35;
     if (window.innerWidth >= 744) return 50;
+    if (window.innerWidth < 744) return 35;
   };
 
   return (

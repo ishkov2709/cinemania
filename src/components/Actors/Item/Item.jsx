@@ -10,13 +10,15 @@ const Item = ({ character, profile_path, name }) => {
   };
 
   const changeWidthSkeletonLoader = () => {
-    if (window.innerWidth < 744) return 147;
+    if (window.innerWidth >= 1440) return 168;
     if (window.innerWidth >= 744) return 204;
+    if (window.innerWidth < 744) return 147;
   };
 
   const changeHeightSkeletonLoader = () => {
-    if (window.innerHeight < 744) return 158;
+    if (window.innerHeight >= 1440) return 301;
     if (window.innerHeight >= 744) return 316;
+    if (window.innerHeight < 744) return 158;
   };
 
   return (

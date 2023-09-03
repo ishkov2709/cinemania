@@ -15,7 +15,7 @@ export const HeaderWrapper = styled.header`
 
   @media screen and (min-width: 1440px) {
     & {
-      padding: 48px 0 120px 0;
+      padding: 48px 0;
     }
   }
 `;
@@ -81,6 +81,13 @@ export const UserInfoLink = styled(Link)`
     & {
       width: 70px;
       height: 70px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 50px;
+      height: 50px;
     }
   }
 `;

@@ -40,6 +40,14 @@ img {
   display: block;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: auto;
+}
+
 .container {
   padding: 0 24px;
   margin: 0 auto;

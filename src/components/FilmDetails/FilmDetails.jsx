@@ -1,12 +1,15 @@
 import { useLocation, useParams } from 'react-router-dom';
 import {
   ActorsLink,
+  ActorsLinkText,
   CloseLink,
   Container,
   ContentBox,
   Description,
+  FlexDetailsWrapper,
   Generes,
   Img,
+  ImgBaseInfoWrapper,
   ImgWrapper,
   Rating,
   RatingWrapper,
@@ -35,11 +38,6 @@ const FilmDetails = () => {
   const location = useLocation();
   const backLink = location.state?.from ?? '/catalog';
   const [loadImg, setLoadImg] = useState(false);
-
-  const handleLoadImg = () => {
-    setLoadImg(true);
-  };
-
   useEffect(() => {
     if (filmId) dispatch(fetchFilmById(filmId));
   }, [dispatch, filmId]);
@@ -47,6 +45,22 @@ const FilmDetails = () => {
   const changeIconSize = () => {
     if (window.innerWidth < 744) return 30;
     if (window.innerWidth >= 744) return 50;
+  };
+
+  const changeSkeletonWidth = () => {
+    if (window.innerWidth >= 1440) return 335;
+    if (window.innerWidth >= 744) return 456;
+    if (window.innerWidth < 744) return 272;
+  };
+
+  const changeSkeletonHeight = () => {
+    if (window.innerWidth >= 1440) return 200;
+    if (window.innerWidth >= 744) return 336;
+    if (window.innerWidth < 744) return 153;
+  };
+
+  const handleLoadImg = () => {
+    setLoadImg(true);
   };
 
   if (filmDetails !== null) {
@@ -74,49 +88,54 @@ const FilmDetails = () => {
 
             {!isLoading && (
               <>
-                <ImgWrapper>
-                  <Img
-                    src={backdrop_path ? `${BASE_URL}${backdrop_path}` : detailPoster}
-                    alt={title}
-                    loadImg={loadImg}
-                    onLoad={handleLoadImg}
-                  />
-
-                  {!loadImg && (
-                    <Skeleton
-                      variant="rectangular"
-                      width={272}
-                      height={153}
-                      animation="wave"
-                      sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
+                <ImgBaseInfoWrapper>
+                  <ImgWrapper>
+                    <Img
+                      src={backdrop_path ? `${BASE_URL}${backdrop_path}` : detailPoster}
+                      alt={title}
+                      loadImg={loadImg}
+                      onLoad={handleLoadImg}
+                      width={window.innerWidth >= 1440 ? 451 : 'auto'}
                     />
-                  )}
-                  <YearField className="first">
-                    Рік: <Year>{new Date(release_date).getFullYear()}</Year>
-                  </YearField>
-                </ImgWrapper>
 
-                <TitleRateWrapper>
-                  <Title>{title}</Title>
+                    {!loadImg && (
+                      <Skeleton
+                        variant="rectangular"
+                        width={changeSkeletonWidth()}
+                        height={changeSkeletonHeight()}
+                        animation="wave"
+                        sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
+                      />
+                    )}
+                    <YearField className="first">
+                      Рік: <Year>{new Date(release_date).getFullYear()}</Year>
+                    </YearField>
+                  </ImgWrapper>
 
-                  <RatingWrapper>
-                    <Rating>{(vote_average * 10).toFixed()}%</Rating>
-                  </RatingWrapper>
-                </TitleRateWrapper>
+                  <FlexDetailsWrapper>
+                    <TitleRateWrapper>
+                      <Title>{title}</Title>
 
-                <YearField className="second">
-                  Рік: <Year>{new Date(release_date).getFullYear()}</Year>
-                </YearField>
+                      <RatingWrapper>
+                        <Rating>{(vote_average * 10).toFixed()}%</Rating>
+                      </RatingWrapper>
+                    </TitleRateWrapper>
 
-                <Description className="first">{overview}</Description>
+                    <YearField className="second">
+                      Рік: <Year>{new Date(release_date).getFullYear()}</Year>
+                    </YearField>
 
-                <Subtitle>Жанри:</Subtitle>
-                <Generes>{genres.map(el => el.name).join(', ')}</Generes>
+                    <Description className="first">{overview}</Description>
+
+                    <Subtitle>Жанри:</Subtitle>
+                    <Generes>{genres.map(el => el.name).join(', ')}</Generes>
+                  </FlexDetailsWrapper>
+                </ImgBaseInfoWrapper>
 
                 <Description className="second">{overview}</Description>
 
                 <ActorsLink to="actors" state={{ from: location }}>
-                  Актори
+                  <ActorsLinkText>Актори</ActorsLinkText>
                 </ActorsLink>
               </>
             )}
