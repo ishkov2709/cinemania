@@ -40,9 +40,9 @@ export const Container = styled.div`
 export const ContentBox = styled.div`
   position: relative;
 
-  padding: 66px 35px 18px 35px;
+  padding: 66px 35px;
 
-  min-height: calc(100vh - 134px);
+  min-height: 100%;
 
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
