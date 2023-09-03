@@ -1,7 +1,7 @@
 {
   "name": "cinemania",
   "version": "0.1.0",
-  "homepage": "https://ishkov2709.github.io/cinemania",
+  "homepage": "https://ishkov2709.github.io/cinemania/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
