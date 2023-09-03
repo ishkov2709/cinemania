@@ -232,7 +232,7 @@ export const Description = styled.p`
   color: #000;
 
   font-weight: 300;
-  font-size: 10px;
+  font-size: 14px;
 
   margin-bottom: 12px;
 
