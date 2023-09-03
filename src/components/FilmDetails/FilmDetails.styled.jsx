@@ -231,7 +231,7 @@ export const Rating = styled.p`
 export const Description = styled.p`
   color: #000;
 
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
 
   margin-bottom: 12px;
