@@ -256,7 +256,7 @@ export const Description = styled.p`
     &.second {
       display: block;
 
-      font-weight: 400;
+      font-weight: 300;
       font-size: 18px;
 
       margin-bottom: 24px;
