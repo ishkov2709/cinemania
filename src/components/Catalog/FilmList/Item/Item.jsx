@@ -47,9 +47,9 @@ const Item = ({ id, poster_path, title }) => {
   };
 
   const changeHeightSkeletonLoader = () => {
-    if (window.innerHeight >= 1440) return 300;
-    if (window.innerHeight >= 744) return 400;
-    if (window.innerHeight < 744) return 221;
+    if (window.innerWidth >= 1440) return 300;
+    if (window.innerWidth >= 744) return 400;
+    if (window.innerWidth < 744) return 221;
   };
 
   return (
