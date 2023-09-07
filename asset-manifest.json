@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/cinemania/static/css/main.b3adc0c7.css",
-    "main.js": "/cinemania/static/js/main.1afe572f.js",
-    "static/js/904.0b462d59.chunk.js": "/cinemania/static/js/904.0b462d59.chunk.js",
-    "static/js/312.5bf05011.chunk.js": "/cinemania/static/js/312.5bf05011.chunk.js",
-    "static/js/417.8b1c4708.chunk.js": "/cinemania/static/js/417.8b1c4708.chunk.js",
+    "main.css": "/cinemania/static/css/main.547043a2.css",
+    "main.js": "/cinemania/static/js/main.77442f1a.js",
+    "static/js/904.d7052131.chunk.js": "/cinemania/static/js/904.d7052131.chunk.js",
+    "static/js/312.eb88fe8e.chunk.js": "/cinemania/static/js/312.eb88fe8e.chunk.js",
+    "static/js/417.f5d4021a.chunk.js": "/cinemania/static/js/417.f5d4021a.chunk.js",
     "static/js/524.007b44a6.chunk.js": "/cinemania/static/js/524.007b44a6.chunk.js",
     "static/media/img_bg_desktop_3.jpg": "/cinemania/static/media/img_bg_desktop_3.e6398f62699fa6c0de97.jpg",
     "static/media/img_bg_tab_3.jpg": "/cinemania/static/media/img_bg_tab_3.febc5cb92e4bf208dee6.jpg",
@@ -18,15 +18,15 @@
     "static/media/img_bg_mob_2.jpg": "/cinemania/static/media/img_bg_mob_2.32d470bf5aed54605948.jpg",
     "static/media/img_actor.jpg": "/cinemania/static/media/img_actor.e1e99fa8ac4d5e5dfd18.jpg",
     "index.html": "/cinemania/index.html",
-    "main.b3adc0c7.css.map": "/cinemania/static/css/main.b3adc0c7.css.map",
-    "main.1afe572f.js.map": "/cinemania/static/js/main.1afe572f.js.map",
-    "904.0b462d59.chunk.js.map": "/cinemania/static/js/904.0b462d59.chunk.js.map",
-    "312.5bf05011.chunk.js.map": "/cinemania/static/js/312.5bf05011.chunk.js.map",
-    "417.8b1c4708.chunk.js.map": "/cinemania/static/js/417.8b1c4708.chunk.js.map",
+    "main.547043a2.css.map": "/cinemania/static/css/main.547043a2.css.map",
+    "main.77442f1a.js.map": "/cinemania/static/js/main.77442f1a.js.map",
+    "904.d7052131.chunk.js.map": "/cinemania/static/js/904.d7052131.chunk.js.map",
+    "312.eb88fe8e.chunk.js.map": "/cinemania/static/js/312.eb88fe8e.chunk.js.map",
+    "417.f5d4021a.chunk.js.map": "/cinemania/static/js/417.f5d4021a.chunk.js.map",
     "524.007b44a6.chunk.js.map": "/cinemania/static/js/524.007b44a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3adc0c7.css",
-    "static/js/main.1afe572f.js"
+    "static/css/main.547043a2.css",
+    "static/js/main.77442f1a.js"
   ]
 }
