@@ -31,18 +31,6 @@ const Header = () => {
     dispatch(reset());
   };
 
-  const changeIconSizeImg = () => {
-    if (window.innerWidth < 744) return 40;
-    if (window.innerWidth >= 744) return 70;
-    if (window.innerWidth >= 1440) return 50;
-  };
-
-  const changeIconSizeFav = () => {
-    if (window.innerWidth >= 1440) return 35;
-    if (window.innerWidth >= 744) return 50;
-    if (window.innerWidth < 744) return 35;
-  };
-
   return (
     <HeaderWrapper>
       <div className="container">
@@ -57,13 +45,13 @@ const Header = () => {
             {isLoggedIn ? (
               <>
                 <FavLink to="favorites">
-                  <BsBookmark size={changeIconSizeFav()} color="#ffffff" />
+                  <BsBookmark color="#ffffff" style={{ width: 'inherit', height: 'inherit' }} />
                 </FavLink>
                 <UserInfoLink to="userinfo" state={{ from: location }}>
-                  {email === 'guest' && <FaUserAlt size={changeIconSizeImg()} />}
-                  {email !== 'guest' && (
-                    <Img src={imageUrl} alt="user" width={changeIconSizeImg()} />
+                  {email === 'guest' && (
+                    <FaUserAlt style={{ width: 'inherit', height: 'inherit' }} />
                   )}
+                  {email !== 'guest' && <Img src={imageUrl} alt="user" />}
                 </UserInfoLink>
               </>
             ) : (

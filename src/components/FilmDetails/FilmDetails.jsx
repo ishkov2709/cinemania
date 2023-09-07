@@ -42,23 +42,6 @@ const FilmDetails = () => {
     if (filmId) dispatch(fetchFilmById(filmId));
   }, [dispatch, filmId]);
 
-  const changeIconSize = () => {
-    if (window.innerWidth < 744) return 30;
-    if (window.innerWidth >= 744) return 50;
-  };
-
-  const changeSkeletonWidth = () => {
-    if (window.innerWidth >= 1440) return 335;
-    if (window.innerWidth >= 744) return 456;
-    if (window.innerWidth < 744) return 272;
-  };
-
-  const changeSkeletonHeight = () => {
-    if (window.innerWidth >= 1440) return 200;
-    if (window.innerWidth >= 744) return 336;
-    if (window.innerWidth < 744) return 153;
-  };
-
   const handleLoadImg = () => {
     setLoadImg(true);
   };
@@ -70,7 +53,7 @@ const FilmDetails = () => {
         <Container className="container">
           <ContentBox>
             <CloseLink to={backLink}>
-              <RxCross1 size={changeIconSize()} />
+              <RxCross1 style={{ width: 'inherit', height: 'inherit' }} />
             </CloseLink>
 
             {isLoading && (
@@ -95,16 +78,17 @@ const FilmDetails = () => {
                       alt={title}
                       loadImg={loadImg}
                       onLoad={handleLoadImg}
-                      width={window.innerWidth >= 1440 ? 451 : 'auto'}
                     />
 
                     {!loadImg && (
                       <Skeleton
                         variant="rectangular"
-                        width={changeSkeletonWidth()}
-                        height={changeSkeletonHeight()}
                         animation="wave"
-                        sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
+                        sx={{
+                          bgcolor: 'rgba(121, 121, 121, 0.7)',
+                          width: 'inherit',
+                          height: 'inherit',
+                        }}
                       />
                     )}
                     <YearField className="first">

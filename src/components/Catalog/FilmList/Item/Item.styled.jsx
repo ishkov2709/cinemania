@@ -35,6 +35,9 @@ export const DetailsLink = styled(Link)`
 export const ImgWrapper = styled.div`
   position: relative;
 
+  width: 100%;
+  height: 100%;
+
   &::before {
     content: '';
 
@@ -58,11 +61,28 @@ export const FavBtn = styled.button`
   top: 10px;
   left: 10px;
 
+  width: 24px;
+  height: 24px;
+
   padding: 0;
 
   background: transparent;
 
   border: none;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
 export const Title = styled.p`

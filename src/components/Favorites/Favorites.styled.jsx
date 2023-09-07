@@ -73,6 +73,18 @@ export const EmptyWrapper = styled.div`
   }
 `;
 
+export const IconWrapper = styled.div`
+  width: 72px;
+  height: 72px;
+
+  @media screen and (min-width: 744px) {
+    & {
+      width: 96px;
+      height: 96px;
+    }
+  }
+`;
+
 export const EmptyText = styled.p`
   font-size: 18px;
 

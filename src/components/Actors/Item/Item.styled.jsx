@@ -45,7 +45,8 @@ export const ImgWrapper = styled.div`
   }
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+`;
 
 export const InitialsWrapper = styled.div`
   padding: 8px 12px;

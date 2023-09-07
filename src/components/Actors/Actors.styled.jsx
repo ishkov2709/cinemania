@@ -64,12 +64,25 @@ export const BackLink = styled(Link)`
   top: 12px;
   left: 12px;
 
+  width: 30px;
+  height: 30px;
+
   color: #000;
 
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
       left: 24px;
+
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 40px;
+      height: 40px;
     }
   }
 `;
@@ -79,12 +92,25 @@ export const CloseLink = styled(Link)`
   top: 12px;
   right: 12px;
 
+  width: 30px;
+  height: 30px;
+
   color: #000;
 
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
       right: 24px;
+
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 40px;
+      height: 40px;
     }
   }
 `;

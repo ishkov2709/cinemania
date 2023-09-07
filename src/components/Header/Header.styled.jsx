@@ -49,15 +49,29 @@ export const Nav = styled.nav`
 
 export const FavLogWrapper = styled.div`
   display: flex;
+  align-items: center;
   gap: 12px;
 `;
 
 export const FavLink = styled(Link)`
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media screen and (min-width: 744px) {
     & {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 35px;
+      height: 35px;
     }
   }
 `;

@@ -9,32 +9,20 @@ const Pagination = () => {
   const totalPages = useSelector(state => state.films.pagination.totalPages);
   const dispatch = useDispatch();
 
-  const changeIconSizeOneTap = () => {
-    if (window.innerWidth >= 1440) return 32;
-    if (window.innerWidth >= 744) return 36;
-    if (window.innerWidth < 744) return 22;
-  };
-
-  const changeIconSizeDoubleTap = () => {
-    if (window.innerWidth >= 1440) return 42;
-    if (window.innerWidth >= 744) return 48;
-    if (window.innerWidth < 744) return 36;
-  };
-
   return (
     <PagWrapper>
-      <Btn disabled={page - 1 <= 0} onClick={() => dispatch(decrement(1))}>
-        <SlArrowLeft size={changeIconSizeOneTap()} />
+      <Btn className="one" disabled={page - 1 <= 0} onClick={() => dispatch(decrement(1))}>
+        <SlArrowLeft style={{ width: 'inherit', height: 'inherit' }} />
       </Btn>
       <Btn disabled={page - 2 <= 0} onClick={() => dispatch(decrement(2))}>
-        <RxDoubleArrowLeft size={changeIconSizeDoubleTap()} />
+        <RxDoubleArrowLeft style={{ width: 'inherit', height: 'inherit' }} />
       </Btn>
       <Counter>{page}</Counter>
       <Btn disabled={page + 2 > totalPages} onClick={() => dispatch(increment(2))}>
-        <RxDoubleArrowRight size={changeIconSizeDoubleTap()} />
+        <RxDoubleArrowRight style={{ width: 'inherit', height: 'inherit' }} />
       </Btn>
-      <Btn disabled={page + 1 > totalPages} onClick={() => dispatch(increment(1))}>
-        <SlArrowRight size={changeIconSizeOneTap()} />
+      <Btn className="one" disabled={page + 1 > totalPages} onClick={() => dispatch(increment(1))}>
+        <SlArrowRight style={{ width: 'inherit', height: 'inherit' }} />
       </Btn>
     </PagWrapper>
   );

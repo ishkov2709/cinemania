@@ -68,12 +68,26 @@ export const CloseLink = styled(Link)`
   position: absolute;
   top: 12px;
   right: 12px;
+
+  width: 30px;
+  height: 30px;
+
   color: #000;
 
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
       right: 24px;
+
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 40px;
+      height: 40px;
     }
   }
 `;
@@ -95,7 +109,7 @@ export const ImgWrapper = styled.div`
   margin-bottom: 30px;
 
   width: 100%;
-  max-height: 153px;
+  height: 153px;
 
   border-radius: 8px;
 
@@ -103,7 +117,7 @@ export const ImgWrapper = styled.div`
 
   @media screen and (min-width: 744px) {
     & {
-      max-height: 336px;
+      height: 336px;
 
       margin-bottom: 24px;
     }
@@ -112,7 +126,7 @@ export const ImgWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     & {
       width: 355px;
-      max-height: 200px;
+      height: 200px;
 
       margin-bottom: 0;
 

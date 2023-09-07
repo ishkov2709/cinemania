@@ -76,6 +76,10 @@ export const Btn = styled.button`
 
   overflow: hidden;
 
+  &.one {
+    padding: 10px;
+  }
+
   &:disabled {
     background: rgba(255, 255, 255, 0.5);
   }

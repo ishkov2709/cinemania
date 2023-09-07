@@ -34,24 +34,6 @@ const Item = ({ id, poster_path, title }) => {
       dispatch(putUserdata({ userId, email, films: [...favFilms.filter(el => el.id !== id)] }));
   };
 
-  const changeIconSizeFav = () => {
-    if (window.innerWidth >= 1440) return 30;
-    if (window.innerWidth >= 744) return 40;
-    if (window.innerWidth < 744) return 24;
-  };
-
-  const changeWidthSkeletonLoader = () => {
-    if (window.innerWidth >= 1440) return 212;
-    if (window.innerWidth >= 744) return 272;
-    if (window.innerWidth < 744) return 161;
-  };
-
-  const changeHeightSkeletonLoader = () => {
-    if (window.innerWidth >= 1440) return 300;
-    if (window.innerWidth >= 744) return 400;
-    if (window.innerWidth < 744) return 221;
-  };
-
   return (
     <ListItem>
       <DetailsLink to={`/catalog/${id}`} state={{ from: location }}>
@@ -59,24 +41,38 @@ const Item = ({ id, poster_path, title }) => {
           {!loadImg && (
             <Skeleton
               variant="rectangular"
-              width={changeWidthSkeletonLoader()}
-              height={changeHeightSkeletonLoader()}
               animation="wave"
-              sx={{ bgcolor: 'rgba(121, 121, 121, 0.7)' }}
+              sx={{
+                bgcolor: 'rgba(121, 121, 121, 0.7)',
+                width: 'inherit',
+                height: 'inherit',
+              }}
             />
           )}
 
-          <Img src={poster_path} alt={title} width={161} onLoad={handleImgLoad} loadImg={loadImg} />
+          <Img src={poster_path} alt={title} onLoad={handleImgLoad} loadImg={loadImg} />
         </ImgWrapper>
         {isLoggedIn && !favFilms?.find(el => el.id === id) && (
           <FavBtn type="button" onClick={handleAddFavClick}>
-            <AiOutlineHeart size={changeIconSizeFav()} color="#ffffff" />
+            <AiOutlineHeart
+              color="#ffffff"
+              style={{
+                width: 'inherit',
+                height: 'inherit',
+              }}
+            />
           </FavBtn>
         )}
 
         {isLoggedIn && favFilms?.find(el => el.id === id) && (
           <FavBtn type="button" onClick={handleDelFavClick}>
-            <AiFillHeart size={changeIconSizeFav()} color="#881313" />
+            <AiFillHeart
+              color="#881313"
+              style={{
+                width: 'inherit',
+                height: 'inherit',
+              }}
+            />
           </FavBtn>
         )}
         <Title>{title}</Title>

@@ -50,17 +50,34 @@ export const CloseLink = styled(Link)`
   position: absolute;
   top: 12px;
   right: 12px;
+
+  width: 30px;
+  height: 30px;
+
   color: #000;
 
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
       right: 24px;
+
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 40px;
+      height: 40px;
     }
   }
 `;
 
 export const ImgWrapper = styled.div`
+  width: 210px;
+  height: 210px;
+
   border: 8px solid #000;
   border-radius: 50%;
 
@@ -68,6 +85,9 @@ export const ImgWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     & {
+      width: 150px;
+      height: 150px;
+
       border: 4px solid #000;
     }
   }

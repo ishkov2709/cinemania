@@ -35,29 +35,19 @@ const UserInfo = () => {
     dispatch(logInError(response));
   };
 
-  const changeUserImgSize = () => {
-    if (window.innerWidth >= 1440) return 150;
-    if (window.innerWidth < 1440) return 210;
-  };
-
-  const changeIconSize = () => {
-    if (window.innerWidth < 744) return 30;
-    if (window.innerWidth >= 744) return 50;
-  };
-
   return (
     <Section>
       <Container className="container">
         <ContentBox>
           <CloseLink to={backLink}>
-            <RxCross1 size={changeIconSize()} />
+            <RxCross1 style={{ width: 'inherit', height: 'inherit' }} />
           </CloseLink>
 
           <ImgWrapper>
             {email !== 'guest' ? (
-              <Img src={imageUrl} alt={name} width={changeUserImgSize()} />
+              <Img src={imageUrl} alt={name} />
             ) : (
-              <FaUserAlt size={changeUserImgSize()} />
+              <FaUserAlt style={{ width: 'inherit', height: 'inherit' }} />
             )}
           </ImgWrapper>
 
