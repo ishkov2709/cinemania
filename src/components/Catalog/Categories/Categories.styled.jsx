@@ -35,6 +35,13 @@ export const Btn = styled.button`
   text-align: center;
   text-decoration: none;
 
+  transition: background-color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #c6bfbf;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       min-width: calc((100% - 48px) / 3);

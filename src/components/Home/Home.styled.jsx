@@ -72,9 +72,7 @@ export const BtnCatalog = styled(Link)`
   align-items: center;
 
   margin: 0 auto;
-
-  width: 197px;
-  height: 48px;
+  padding: 18px 30px;
 
   background-color: #fff;
   color: #000;
@@ -84,10 +82,16 @@ export const BtnCatalog = styled(Link)`
   border: 1px solid #000;
   border-radius: 8px;
 
+  transition: background-color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #c6bfbf;
+  }
+
   @media screen and (min-width: 744px) {
     & {
-      width: 333px;
-      height: 90px;
+      padding: 22px 36px;
 
       font-size: 24px;
     }
@@ -96,6 +100,8 @@ export const BtnCatalog = styled(Link)`
   @media screen and (min-width: 1440px) {
     & {
       margin: 0 0 0 auto;
+
+      font-size: 20px;
     }
   }
 `;

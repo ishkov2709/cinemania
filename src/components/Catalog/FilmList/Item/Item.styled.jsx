@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const ListItem = styled.li``;
+export const ListItem = styled.li`
+  position: relative;
+
+  border-radius: 8px;
+`;
 
 export const DetailsLink = styled(Link)`
   display: block;
@@ -17,7 +21,7 @@ export const DetailsLink = styled(Link)`
   height: 221px;
 
   border: 1px solid #828282;
-  border-radius: 8px;
+  border-radius: inherit;
 
   overflow: hidden;
 
@@ -38,6 +42,10 @@ export const ImgWrapper = styled.div`
   width: 100%;
   height: 100%;
 
+  border-radius: inherit;
+
+  overflow: hidden;
+
   &::before {
     content: '';
 
@@ -49,6 +57,14 @@ export const ImgWrapper = styled.div`
     height: 100%;
 
     background-color: ${({ loadImg }) => (loadImg ? 'rgba(0, 0, 0, 0.5)' : 'none')};
+  }
+
+  transform: scale(1);
+
+  transition: transform 250ms ease-in-out 500ms;
+
+  .link-details:hover & {
+    transform: scale(1.1);
   }
 `;
 

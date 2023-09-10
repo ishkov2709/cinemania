@@ -42,7 +42,7 @@ const SharedLayout = () => {
           <Outlet />
         </Suspense>
       </CustomWrapper>
-      {toTopPosition > 50 && <ScrollToTop handler={() => handleClick()} />}
+      {toTopPosition > 250 && <ScrollToTop handler={() => handleClick()} />}
     </MainWrapper>
   );
 };

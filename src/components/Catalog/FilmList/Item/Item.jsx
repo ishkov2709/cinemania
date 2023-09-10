@@ -36,7 +36,7 @@ const Item = ({ id, poster_path, title }) => {
 
   return (
     <ListItem>
-      <DetailsLink to={`/catalog/${id}`} state={{ from: location }}>
+      <DetailsLink className="link-details" to={`/catalog/${id}`} state={{ from: location }}>
         <ImgWrapper loadImg={loadImg}>
           {!loadImg && (
             <Skeleton

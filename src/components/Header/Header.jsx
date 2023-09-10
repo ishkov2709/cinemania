@@ -36,7 +36,7 @@ const Header = () => {
       <div className="container">
         <Nav>
           <ToMainLink to="/" onClick={handleReset}>
-            <MdDiamond size={50} color="#ffffff" />
+            <MdDiamond size={50} />
           </ToMainLink>
 
           <ResolutionListener component={SearchForm} position="header" />
@@ -45,7 +45,7 @@ const Header = () => {
             {isLoggedIn ? (
               <>
                 <FavLink to="favorites">
-                  <BsBookmark color="#ffffff" style={{ width: 'inherit', height: 'inherit' }} />
+                  <BsBookmark style={{ width: 'inherit', height: 'inherit' }} />
                 </FavLink>
                 <UserInfoLink to="userinfo" state={{ from: location }}>
                   {email === 'guest' && (

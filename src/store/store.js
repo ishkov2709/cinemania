@@ -19,6 +19,7 @@ const authPersistConfig = {
 const filmsPersistConfig = {
   key: 'films',
   storage,
+  whitelist: [],
 };
 
 const customizedMiddleware = getDefaultMiddleware({

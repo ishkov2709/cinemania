@@ -21,6 +21,15 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const ToMainLink = styled(Link)`
+  color: #fff;
+
+  transition: color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #c6bfbf;
+  }
+
   @media screen and (min-width: 1440px) {
     & {
       margin-right: 26px;
@@ -60,6 +69,15 @@ export const FavLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  color: #fff;
+
+  transition: color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #c6bfbf;
+  }
 
   @media screen and (min-width: 744px) {
     & {

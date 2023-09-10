@@ -27,6 +27,7 @@ import { RxCross1 } from 'react-icons/rx';
 import detailPoster from '../../img/detailPoster/img_poster.jpg';
 import { Skeleton } from '@mui/material';
 import { TailSpin } from 'react-loader-spinner';
+import StarField from './StarField';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/original';
 
@@ -101,6 +102,7 @@ const FilmDetails = () => {
                       <Title>{title}</Title>
 
                       <RatingWrapper>
+                        <StarField />
                         <Rating>{(vote_average * 10).toFixed()}%</Rating>
                       </RatingWrapper>
                     </TitleRateWrapper>

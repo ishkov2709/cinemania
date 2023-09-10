@@ -68,13 +68,20 @@ export const Btn = styled.button`
 
   padding: 0;
 
-  background: #fff;
+  background-color: #fff;
   color: #000;
 
   border: none;
   border-radius: 8px;
 
   overflow: hidden;
+
+  transition: background-color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-color: #c6bfbf;
+  }
 
   &.one {
     padding: 10px;

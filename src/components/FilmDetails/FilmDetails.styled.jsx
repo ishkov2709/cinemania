@@ -240,6 +240,8 @@ export const RatingWrapper = styled.div``;
 export const Rating = styled.p`
   font-weight: 300;
   font-size: 24px;
+
+  text-align: end;
 `;
 
 export const Description = styled.p`

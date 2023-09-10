@@ -31,8 +31,6 @@ export const ContentBox = styled.div`
 
   padding: 200px 35px;
 
-  min-height: calc(100vh - 134px);
-
   background-color: #fff;
 
   border-radius: 12px;

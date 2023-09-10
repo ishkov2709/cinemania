@@ -9,7 +9,7 @@ export const Btn = styled.button`
   height: 85px;
 
   background: transparent;
-  color: #fff;
+  color: #cecece;
   border: none;
 
   z-index: 1000;
@@ -36,7 +36,7 @@ export const Btn = styled.button`
   }
 
   @media screen and (min-width: 1440px) {
-    bottom: 25px;
+    bottom: 150px;
 
     animation: arrowDesktopTransition 2000ms linear infinite;
   }
