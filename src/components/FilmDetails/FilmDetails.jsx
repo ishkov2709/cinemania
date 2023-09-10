@@ -89,7 +89,7 @@ const FilmDetails = () => {
             {isLoggedIn && !favFilms?.find(el => el.id === id) && (
               <FavBtn type="button" onClick={handleAddFavClick}>
                 <AiOutlineHeart
-                  color="#ffffff"
+                  className='add'
                   style={{
                     width: 'inherit',
                     height: 'inherit',
@@ -101,7 +101,7 @@ const FilmDetails = () => {
             {isLoggedIn && favFilms?.find(el => el.id === id) && (
               <FavBtn type="button" onClick={handleDelFavClick}>
                 <AiFillHeart
-                  color="#881313"
+                  className='delete'
                   style={{
                     width: 'inherit',
                     height: 'inherit',

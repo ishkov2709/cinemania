@@ -10,7 +10,7 @@ const StarField = () => {
   for (let i = 1; i < 6; i += 1) {
     items.push(
       <Item key={i}>
-        <IoMdStarOutline color={vote_average / 2 >= i ? '#BFB12E' : '#000000'} size={24} />
+        <IoMdStarOutline color={vote_average / 2 >= i ? '#FFE600' : '#000000'} size={24} />
       </Item>
     );
   }

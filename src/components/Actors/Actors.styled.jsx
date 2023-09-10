@@ -69,6 +69,13 @@ export const BackLink = styled(Link)`
 
   color: #000;
 
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
@@ -96,6 +103,13 @@ export const CloseLink = styled(Link)`
   height: 30px;
 
   color: #000;
+
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
 
   @media screen and (min-width: 744px) {
     & {

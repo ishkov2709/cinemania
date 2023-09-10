@@ -86,6 +86,25 @@ export const FavBtn = styled.button`
 
   border: none;
 
+  & .add {
+    color: #ffffff;
+
+    transition: color 250ms ease-in;
+  }
+
+  & .delete {
+    color: #881313;
+
+    transition: color 250ms ease-in;
+  }
+
+  &:hover .add,
+  &:hover .delete,
+  &:focus .add,
+  &:focus .delete {
+    color: rgba(136, 19, 19, 0.7);
+  }
+
   @media screen and (min-width: 744px) {
     & {
       width: 40px;

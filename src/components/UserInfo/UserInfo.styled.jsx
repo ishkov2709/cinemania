@@ -126,6 +126,13 @@ export const LogOutBtn = styled.button`
   border: 1px solid #000;
   border-radius: 4px;
 
+  transition: background 250ms ease-in;
+
+  &:hover,
+  &:focus {
+    background: #e8e8e8;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       font-size: 32px;

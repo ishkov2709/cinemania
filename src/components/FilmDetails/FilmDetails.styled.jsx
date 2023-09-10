@@ -74,6 +74,13 @@ export const CloseLink = styled(Link)`
 
   color: #000;
 
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       top: 24px;
@@ -104,6 +111,25 @@ export const FavBtn = styled.button`
   color: #ffffff;
 
   border: none;
+
+  & .add {
+    color: #ffffff;
+
+    transition: color 250ms ease-in;
+  }
+
+  & .delete {
+    color: #881313;
+
+    transition: color 250ms ease-in;
+  }
+
+  &:hover .add,
+  &:hover .delete,
+  &:focus .add,
+  &:focus .delete {
+    color: rgba(136, 19, 19, 0.7);
+  }
 
   @media screen and (min-width: 744px) {
     & {
@@ -376,6 +402,14 @@ export const ActorsLink = styled(Link)`
 
   border: 1px solid #000;
   border-radius: 8px;
+
+  transition: color 250ms linear, border 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
 
   @media screen and (min-width: 744px) {
     & {

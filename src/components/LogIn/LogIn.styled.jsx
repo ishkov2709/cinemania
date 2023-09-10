@@ -95,6 +95,13 @@ export const GuestBtn = styled.button`
 
   border: none;
 
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #14165a;
+  }
+
   @media screen and (min-width: 744px) {
     & {
       margin-top: 18px;
