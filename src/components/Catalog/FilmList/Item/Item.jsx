@@ -6,6 +6,9 @@ import { Skeleton } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFav, delAsFav } from '../../../../store/auth/authSlice';
 import { putUserdata } from '../../../../store/auth/operations';
+import basePoster from '../../../../img/basePoster/img_poster.jpg';
+
+const BASE_URL = 'https://image.tmdb.org/t/p/original';
 
 const Item = ({ id, poster_path, title }) => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -50,7 +53,12 @@ const Item = ({ id, poster_path, title }) => {
             />
           )}
 
-          <Img src={poster_path} alt={title} onLoad={handleImgLoad} loadImg={loadImg} />
+          <Img
+            src={poster_path ? `${BASE_URL}${poster_path}` : basePoster}
+            alt={title}
+            onLoad={handleImgLoad}
+            loadImg={loadImg}
+          />
         </ImgWrapper>
         {isLoggedIn && !favFilms?.find(el => el.id === id) && (
           <FavBtn type="button" onClick={handleAddFavClick}>

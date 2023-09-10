@@ -6,6 +6,7 @@ import {
   Container,
   ContentBox,
   Description,
+  FavBtn,
   FlexDetailsWrapper,
   Generes,
   Img,
@@ -24,10 +25,13 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilmById } from '../../store/films/operations';
 import { RxCross1 } from 'react-icons/rx';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import detailPoster from '../../img/detailPoster/img_poster.jpg';
 import { Skeleton } from '@mui/material';
 import { TailSpin } from 'react-loader-spinner';
 import StarField from './StarField';
+import { addToFav, delAsFav } from '../../store/auth/authSlice';
+import { putUserdata } from '../../store/auth/operations';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/original';
 
@@ -36,12 +40,41 @@ const FilmDetails = () => {
   const dispatch = useDispatch();
   const filmDetails = useSelector(state => state.films.filmDetails);
   const isLoading = useSelector(state => state.films.isLoading);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const favFilms = useSelector(state => state.auth.favFilms);
+  const userId = useSelector(state => state.auth.userId);
+  const email = useSelector(state => state.auth.email);
   const location = useLocation();
   const backLink = location.state?.from ?? '/catalog';
   const [loadImg, setLoadImg] = useState(false);
+
   useEffect(() => {
     if (filmId) dispatch(fetchFilmById(filmId));
   }, [dispatch, filmId]);
+
+  const id = filmDetails?.id;
+  const poster_path = filmDetails?.poster_path;
+  const title = filmDetails?.title;
+
+  const handleAddFavClick = e => {
+    e.preventDefault();
+    dispatch(addToFav({ id, poster_path, title }));
+    if (email !== 'guest')
+      dispatch(
+        putUserdata({
+          userId,
+          email,
+          films: [...favFilms, { id, poster_path, title }],
+        })
+      );
+  };
+
+  const handleDelFavClick = e => {
+    e.preventDefault();
+    dispatch(delAsFav(id));
+    if (email !== 'guest')
+      dispatch(putUserdata({ userId, email, films: [...favFilms.filter(el => el.id !== id)] }));
+  };
 
   const handleLoadImg = () => {
     setLoadImg(true);
@@ -53,6 +86,30 @@ const FilmDetails = () => {
       <Section>
         <Container className="container">
           <ContentBox>
+            {isLoggedIn && !favFilms?.find(el => el.id === id) && (
+              <FavBtn type="button" onClick={handleAddFavClick}>
+                <AiOutlineHeart
+                  color="#ffffff"
+                  style={{
+                    width: 'inherit',
+                    height: 'inherit',
+                  }}
+                />
+              </FavBtn>
+            )}
+
+            {isLoggedIn && favFilms?.find(el => el.id === id) && (
+              <FavBtn type="button" onClick={handleDelFavClick}>
+                <AiFillHeart
+                  color="#881313"
+                  style={{
+                    width: 'inherit',
+                    height: 'inherit',
+                  }}
+                />
+              </FavBtn>
+            )}
+
             <CloseLink to={backLink}>
               <RxCross1 style={{ width: 'inherit', height: 'inherit' }} />
             </CloseLink>

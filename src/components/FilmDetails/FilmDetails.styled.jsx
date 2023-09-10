@@ -92,6 +92,37 @@ export const CloseLink = styled(Link)`
   }
 `;
 
+export const FavBtn = styled.button`
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  width: 30px;
+  height: 30px;
+
+  background: transparent;
+  color: #ffffff;
+
+  border: none;
+
+  @media screen and (min-width: 744px) {
+    & {
+      top: 24px;
+      left: 24px;
+
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 40px;
+      height: 40px;
+    }
+  }
+`;
+
 export const ImgBaseInfoWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     & {

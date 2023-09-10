@@ -125,3 +125,14 @@ export const UserInfoLink = styled(Link)`
 `;
 
 export const Img = styled.img``;
+
+export const LoginLink = styled(Link)`
+  color: #fff;
+
+  transition: color 250ms ease-out;
+
+  &:hover,
+  &:focus {
+    color: #c6bfbf;
+  }
+`;

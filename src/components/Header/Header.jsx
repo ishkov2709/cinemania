@@ -1,4 +1,4 @@
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { MdDiamond } from 'react-icons/md';
 import { BsBookmark } from 'react-icons/bs';
 import { SlLogin } from 'react-icons/sl';
@@ -8,6 +8,7 @@ import {
   FavLogWrapper,
   HeaderWrapper,
   Img,
+  LoginLink,
   Nav,
   ToMainLink,
   UserInfoLink,
@@ -55,9 +56,9 @@ const Header = () => {
                 </UserInfoLink>
               </>
             ) : (
-              <Link to="login" state={{ from: location }}>
-                <SlLogin size={35} color="#ffffff" />
-              </Link>
+              <LoginLink to="login" state={{ from: location }}>
+                <SlLogin size={35} />
+              </LoginLink>
             )}
           </FavLogWrapper>
         </Nav>
