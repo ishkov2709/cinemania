@@ -4,18 +4,16 @@ import jwt_decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { guestAuth, logInError, logInSucces } from '../../store/auth/authSlice';
 import { RxCross1 } from 'react-icons/rx';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const backLink = location.state?.from ?? '/';
 
   const responseGoogle = ({ credential }) => {
     const decode = jwt_decode(credential);
     dispatch(logInSucces(decode));
-    navigate('/catalog');
   };
 
   const errorResponseGoogle = response => {
@@ -24,7 +22,6 @@ const LogIn = () => {
 
   const logInAsGuest = () => {
     dispatch(guestAuth());
-    navigate('/catalog');
   };
 
   return (

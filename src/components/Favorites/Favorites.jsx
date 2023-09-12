@@ -18,7 +18,7 @@ const Favorites = () => {
       <Container className="container">
         <Title>Фільми які вам сподобалися</Title>
 
-        {favFilms.length > 0 && <FilmList films={favFilms} />}
+        {favFilms?.length > 0 && <FilmList films={favFilms} />}
 
         {!favFilms?.length && (
           <EmptyWrapper>

@@ -1,11 +1,10 @@
 import { useSelector } from 'react-redux';
-import Favorites from './Favorites/Favorites';
 import LogIn from './LogIn/LogIn';
 
-const RestrictedRoute = () => {
+const RestrictedRoute = ({ component: Component }) => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
-  return isLoggedIn ? <Favorites /> : <LogIn />;
+  return isLoggedIn ? Component : <LogIn />;
 };
 
 export default RestrictedRoute;

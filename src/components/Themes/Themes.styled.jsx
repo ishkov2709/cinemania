@@ -16,7 +16,7 @@ export const Section = styled.section`
 export const Container = styled.div`
   max-width: 390px;
 
-  min-height: 100%;
+  height: 100%;
 
   @media screen and (min-width: 744px) {
     & {
@@ -35,23 +35,18 @@ export const Container = styled.div`
 export const ContentBox = styled.div`
   position: relative;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
   min-height: 100%;
 
-  padding: 200px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 150px 10px;
 
   background-color: #fff;
+  color: #000;
 
   border-radius: 12px;
-
-  @media screen and (min-width: 744px) {
-    & {
-      padding: 190px 120px;
-    }
-  }
 `;
 
 export const CloseLink = styled(Link)`
@@ -71,52 +66,6 @@ export const CloseLink = styled(Link)`
 
       width: 50px;
       height: 50px;
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    & {
-      width: 40px;
-      height: 40px;
-    }
-  }
-`;
-
-export const Title = styled.h2`
-  font-weight: 400;
-  font-size: 36px;
-
-  color: #000;
-
-  margin-bottom: 18px;
-
-  @media screen and (min-width: 744px) {
-    & {
-      font-size: 64px;
-
-      margin-bottom: 24px;
-    }
-  }
-`;
-
-export const GuestBtn = styled.button`
-  margin-top: 12px;
-
-  background: transparent;
-  color: #6469dc;
-
-  border: none;
-
-  transition: color 250ms linear;
-
-  &:hover,
-  &:focus {
-    color: #14165a;
-  }
-
-  @media screen and (min-width: 744px) {
-    & {
-      margin-top: 18px;
     }
   }
 `;

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 export const Section = styled.section`
   padding-bottom: 24px;
 
+  min-height: 100%;
+
   @media screen and (min-width: 744px) {
     & {
       padding-bottom: 75px;
@@ -14,10 +16,18 @@ export const Section = styled.section`
 export const Container = styled.div`
   max-width: 390px;
 
+  min-height: 100%;
+
   @media screen and (min-width: 744px) {
     & {
       max-width: none;
       width: 744px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      width: 1156px;
     }
   }
 `;
@@ -29,6 +39,8 @@ export const ContentBox = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 12px;
+
+  min-height: 100%;
 
   padding: 104px 46px;
 
@@ -73,6 +85,8 @@ export const CloseLink = styled(Link)`
 `;
 
 export const ImgWrapper = styled.div`
+  display: flex;
+
   width: 210px;
   height: 210px;
 
@@ -125,6 +139,38 @@ export const LogOutBtn = styled.button`
 
   border: 1px solid #000;
   border-radius: 4px;
+
+  transition: background 250ms ease-in;
+
+  &:hover,
+  &:focus {
+    background: #e8e8e8;
+  }
+
+  @media screen and (min-width: 744px) {
+    & {
+      font-size: 32px;
+    }
+  }
+`;
+
+export const Themes = styled(Link)`
+  width: 215px;
+
+  padding: 8px;
+
+  background: transparent;
+  color: #000000;
+
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 24px;
+
+  border: 1px solid #000;
+  border-radius: 4px;
+
+  text-decoration: none;
+  text-align: center;
 
   transition: background 250ms ease-in;
 

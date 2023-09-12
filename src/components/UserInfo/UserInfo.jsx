@@ -8,10 +8,11 @@ import {
   LogOutBtn,
   Name,
   Section,
+  Themes,
 } from './UserInfo.styled';
 import { FaUserAlt } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import { logInError, logInSucces, logOut } from '../../store/auth/authSlice';
@@ -21,14 +22,12 @@ const UserInfo = () => {
   const email = useSelector(state => state.auth.email);
   const imageUrl = useSelector(state => state.auth.imageUrl);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const backLink = location.state?.from ?? '/';
 
   const responseGoogle = ({ credential }) => {
     const decode = jwt_decode(credential);
     dispatch(logInSucces(decode));
-    navigate('/catalog');
   };
 
   const errorResponseGoogle = response => {
@@ -56,6 +55,10 @@ const UserInfo = () => {
           {email === 'guest' && (
             <GoogleLogin onSuccess={responseGoogle} onError={errorResponseGoogle} />
           )}
+
+          <Themes to="/themes" state={{ from: location }}>
+            Теми
+          </Themes>
 
           <LogOutBtn type="button" onClick={() => dispatch(logOut())}>
             Вийти

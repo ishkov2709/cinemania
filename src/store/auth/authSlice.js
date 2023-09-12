@@ -47,6 +47,9 @@ const authSlice = createSlice({
     delAsFav: (state, { payload }) => {
       state.favFilms = [...state.favFilms.filter(el => el.id !== payload)];
     },
+    changeTheme: (state, { payload }) => {
+      state.theme = payload;
+    },
   },
   extraReducers: builder => {
     builder.addCase(fetchUserdata.fulfilled, handleFetchUserdataFulfilled);
@@ -55,4 +58,5 @@ const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
-export const { logInSucces, logInError, guestAuth, logOut, addToFav, delAsFav } = authSlice.actions;
+export const { logInSucces, logInError, guestAuth, logOut, addToFav, delAsFav, changeTheme } =
+  authSlice.actions;

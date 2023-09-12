@@ -23,6 +23,7 @@ const initialState = {
     imageUrl: null,
     favFilms: null,
     logInError: null,
+    theme: 'second',
   },
 };
 
