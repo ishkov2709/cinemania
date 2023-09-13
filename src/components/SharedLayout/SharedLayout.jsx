@@ -24,12 +24,12 @@ const SharedLayout = () => {
     });
   };
 
+  const transformTitleTheme = () => {
+    return theme[0].toUpperCase() + theme.slice(1, theme.length);
+  };
+
   return (
-    <MainWrapper
-      className="main-wrapper"
-      onScroll={handleScroll}
-      theme={theme[0].toUpperCase() + theme.slice(1, theme.length)}
-    >
+    <MainWrapper className="main-wrapper" onScroll={handleScroll} theme={transformTitleTheme()}>
       <Header />
       <CustomWrapper>
         <Suspense
