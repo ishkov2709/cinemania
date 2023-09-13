@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { CloseLink, Container, ContentBox, Section } from './Themes.styled';
 import { RxCross1 } from 'react-icons/rx';
-import Slider from './Slider';
+import ThemeItems from './ThemeItems';
 
 const Themes = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const Themes = () => {
           <CloseLink to={backLink}>
             <RxCross1 style={{ width: 'inherit', height: 'inherit' }} />
           </CloseLink>
-          <Slider />
+          <ThemeItems />
         </ContentBox>
       </Container>
     </Section>

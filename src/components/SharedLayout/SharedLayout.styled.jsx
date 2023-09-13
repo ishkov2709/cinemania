@@ -11,19 +11,19 @@ export const MainWrapper = styled.div`
 
   @media screen and (max-width: 743px) {
     & {
-      animation: changeBgMobFirstTheme 10s infinite linear;
+      animation: ${({ theme }) => `changeBgMob${theme}Theme`} 10s infinite linear;
     }
   }
 
   @media screen and (min-width: 744px) {
     & {
-      animation: changeBgTabFirstTheme 10s infinite linear;
+      animation: ${({ theme }) => `changeBgTab${theme}Theme`} 10s infinite linear;
     }
   }
 
   @media screen and (min-width: 1440px) {
     & {
-      animation: changeBgDesktopFirstTheme 10s infinite linear;
+      animation: ${({ theme }) => `changeBgDesktop${theme}Theme`} 10s infinite linear;
     }
   }
 

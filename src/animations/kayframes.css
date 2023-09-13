@@ -1,4 +1,4 @@
-@keyframes changeBgMobFirstTheme {
+@keyframes changeBgMobSecondTheme {
   0% {
     background-image: url('../img/background/mob/img_bg_mob_1.jpg');
     background-size: cover;
@@ -20,7 +20,51 @@
   }
 }
 
-@keyframes changeBgTabFirstTheme {
+@keyframes changeBgMobFirstTheme {
+  0% {
+    background-image: url('../img/background/mob/img_bg_mob_4.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/mob/img_bg_mob_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/mob/img_bg_mob_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/mob/img_bg_mob_4.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgMobThirdTheme {
+  0% {
+    background-image: url('../img/background/mob/img_bg_mob_5.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/mob/img_bg_mob_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/mob/img_bg_mob_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/mob/img_bg_mob_5.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgTabSecondTheme {
   0% {
     background-image: url('../img/background/tab/img_bg_tab_1.jpg');
     background-size: cover;
@@ -42,7 +86,51 @@
   }
 }
 
-@keyframes changeBgDesktopFirstTheme {
+@keyframes changeBgTabFirstTheme {
+  0% {
+    background-image: url('../img/background/tab/img_bg_tab_4.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/tab/img_bg_tab_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/tab/img_bg_tab_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/tab/img_bg_tab_4.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgTabThirdTheme {
+  0% {
+    background-image: url('../img/background/tab/img_bg_tab_5.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/tab/img_bg_tab_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/tab/img_bg_tab_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/tab/img_bg_tab_5.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgDesktopSecondTheme {
   0% {
     background-image: url('../img/background/desktop/img_bg_desktop_1.jpg');
     background-size: cover;
@@ -60,6 +148,50 @@
 
   100% {
     background-image: url('../img/background/desktop/img_bg_desktop_1.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgDesktopFirstTheme {
+  0% {
+    background-image: url('../img/background/desktop/img_bg_desktop_4.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/desktop/img_bg_desktop_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/desktop/img_bg_desktop_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/desktop/img_bg_desktop_4.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgDesktopThirdTheme {
+  0% {
+    background-image: url('../img/background/desktop/img_bg_desktop_5.jpg');
+    background-size: cover;
+  }
+
+  33% {
+    background-image: url('../img/background/desktop/img_bg_desktop_2.jpg');
+    background-size: cover;
+  }
+
+  64% {
+    background-image: url('../img/background/desktop/img_bg_desktop_3.jpg');
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url('../img/background/desktop/img_bg_desktop_5.jpg');
     background-size: cover;
   }
 }

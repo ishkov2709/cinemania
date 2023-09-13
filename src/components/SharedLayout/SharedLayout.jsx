@@ -4,8 +4,11 @@ import { Suspense, useState } from 'react';
 import { CustomWrapper, MainWrapper } from './SharedLayout.styled';
 import { TailSpin } from 'react-loader-spinner';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import { useSelector } from 'react-redux';
 
 const SharedLayout = () => {
+  const theme = useSelector(state => state.auth.theme);
+
   const [toTopPosition, setToTopPosition] = useState(0);
 
   const handleScroll = e => {
@@ -22,7 +25,11 @@ const SharedLayout = () => {
   };
 
   return (
-    <MainWrapper className="main-wrapper" onScroll={handleScroll}>
+    <MainWrapper
+      className="main-wrapper"
+      onScroll={handleScroll}
+      theme={theme[0].toUpperCase() + theme.slice(1, theme.length)}
+    >
       <Header />
       <CustomWrapper>
         <Suspense

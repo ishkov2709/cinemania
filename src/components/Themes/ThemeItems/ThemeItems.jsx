@@ -1,10 +1,10 @@
-import { Btn, Item, List } from './Slider.styled';
+import { Btn, Item, List } from './ThemeItems.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeTheme } from '../../../store/auth/authSlice';
 import ResponsiveImg from './ResponsiveImg/ResponsiveImg';
 import sliderImg from '../../../img/index.js';
 
-const Slider = () => {
+const ThemeItems = () => {
   const theme = useSelector(state => state.auth.theme);
   const dispatch = useDispatch();
 
@@ -27,4 +27,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default ThemeItems;
