@@ -21,13 +21,21 @@ export const MainWrapper = styled.div`
 
   @media screen and (min-width: 744px) {
     & {
-      animation: ${({ theme }) => `changeBgTab${theme}Theme`} 10s infinite linear;
+      animation: ${({ theme }) =>
+          `changeBgTab${
+            theme.length ? theme[0].toUpperCase() + theme.slice(1, theme.length) : 'Second'
+          }Theme`}
+        10s infinite linear;
     }
   }
 
   @media screen and (min-width: 1440px) {
     & {
-      animation: ${({ theme }) => `changeBgDesktop${theme}Theme`} 10s infinite linear;
+      animation: ${({ theme }) =>
+          `changeBgDesktop${
+            theme.length ? theme[0].toUpperCase() + theme.slice(1, theme.length) : 'Second'
+          }Theme`}
+        10s infinite linear;
     }
   }
 
