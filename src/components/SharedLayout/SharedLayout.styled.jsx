@@ -11,7 +11,11 @@ export const MainWrapper = styled.div`
 
   @media screen and (max-width: 743px) {
     & {
-      animation: ${({ theme }) => `changeBgMob${theme}Theme`} 10s infinite linear;
+      animation: ${({ theme }) =>
+          `changeBgMob${
+            theme.length ? theme[0].toUpperCase() + theme.slice(1, theme.length) : 'Second'
+          }Theme`}
+        10s infinite linear;
     }
   }
 
