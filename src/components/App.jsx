@@ -13,6 +13,7 @@ const FilmDetails = lazy(() => import('./FilmDetails'));
 const Actors = lazy(() => import('./Actors'));
 const Favorites = lazy(() => import('./Favorites'));
 const Themes = lazy(() => import('./Themes'));
+const NotFound = lazy(() => import('./NotFound'));
 
 function App() {
   const email = useSelector(state => state.auth.email);
@@ -33,10 +34,13 @@ function App() {
           <Route path="login" element={<PrivateRoute />} />
           <Route path="userinfo" element={<PrivateRoute />} />
           <Route path="catalog" element={<Catalog />} />
+
           <Route path="catalog/:filmId" element={<FilmDetails />} />
           <Route path="catalog/:filmId/actors" element={<Actors />} />
           <Route path="favorites" element={<RestrictedRoute component={<Favorites />} />} />
           <Route path="themes" element={<RestrictedRoute component={<Themes />} />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>

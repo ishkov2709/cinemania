@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 const SharedLayout = () => {
   const theme = useSelector(state => state.auth.theme);
+  const error = useSelector(state => state.films.error);
 
   const [toTopPosition, setToTopPosition] = useState(0);
 
@@ -25,7 +26,11 @@ const SharedLayout = () => {
   };
 
   return (
-    <MainWrapper className="main-wrapper" onScroll={handleScroll} theme={theme}>
+    <MainWrapper
+      className="main-wrapper"
+      onScroll={handleScroll}
+      theme={error === 'Not Found' ? 'error' : theme}
+    >
       <Header />
       <CustomWrapper>
         <Suspense

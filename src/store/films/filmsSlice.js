@@ -53,7 +53,7 @@ const handleFetchFimByIdFulfilled = (state, { payload }) => {
 
 const handleFetchFimByIdRejected = (state, { payload }) => {
   state.isLoading = false;
-  state.error = payload;
+  state.error = payload.message;
 };
 
 const handleFetchFilmActorsPending = state => {
@@ -134,6 +134,9 @@ const filmsSlice = createSlice({
     setSearch: (state, { payload }) => {
       state.search = payload;
     },
+    setNotFoundError: state => {
+      state.error = 'Not Found';
+    },
     reset: state => {
       state.isLoading = true;
       state.pagination.page = null;
@@ -196,4 +199,4 @@ const filmsSlice = createSlice({
 
 export const filmsReducer = filmsSlice.reducer;
 
-export const { increment, decrement, setSearch, reset } = filmsSlice.actions;
+export const { increment, decrement, setSearch, setNotFoundError, reset } = filmsSlice.actions;

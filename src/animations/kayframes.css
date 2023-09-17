@@ -196,6 +196,39 @@
   }
 }
 
+@keyframes changeBgMobErrorTheme {
+  0% {
+    background-image: url('../img/background/error/img_bg_error_mob.jpg');
+    background-size: cover;
+  }
+  100% {
+    background-image: url('../img/background/error/img_bg_error_mob.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgTabErrorTheme {
+  0% {
+    background-image: url('../img/background/error/img_bg_error_tab.jpg');
+    background-size: cover;
+  }
+  100% {
+    background-image: url('../img/background/error/img_bg_error_tab.jpg');
+    background-size: cover;
+  }
+}
+
+@keyframes changeBgDesktopErrorTheme {
+  0% {
+    background-image: url('../img/background/error/img_bg_error_desktop.jpg');
+    background-size: cover;
+  }
+  100% {
+    background-image: url('../img/background/error/img_bg_error_desktop.jpg');
+    background-size: cover;
+  }
+}
+
 @keyframes smoothOpacity {
   0% {
     opacity: 0;
