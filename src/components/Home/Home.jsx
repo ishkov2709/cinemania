@@ -1,8 +1,21 @@
 import SearchForm from '../SearchForm';
 import ResolutionListener from '../ResolutionListener';
 import { BtnCatalog, Container, HeroText, HeroTitle, Section } from './Home.styled';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { reset } from '../../store/films/filmsSlice';
 
 const Home = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (searchParams.get('query')) setSearchParams();
+
+    dispatch(reset());
+  }, [searchParams, setSearchParams, dispatch]);
+
   return (
     <Section>
       <Container className="container">

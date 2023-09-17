@@ -1,8 +1,8 @@
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { MdDiamond } from 'react-icons/md';
 import { BsBookmark } from 'react-icons/bs';
 import { SlLogin } from 'react-icons/sl';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   FavLink,
   FavLogWrapper,
@@ -13,7 +13,6 @@ import {
   ToMainLink,
   UserInfoLink,
 } from './Header.styled';
-import { reset } from '../../store/films/filmsSlice';
 import { FaUserAlt } from 'react-icons/fa';
 import ResolutionListener from '../ResolutionListener';
 import SearchForm from '../SearchForm/SearchForm';
@@ -22,21 +21,13 @@ const Header = () => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const email = useSelector(state => state.auth.email);
   const imageUrl = useSelector(state => state.auth.imageUrl);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const dispatch = useDispatch();
   const location = useLocation();
-
-  const handleReset = () => {
-    if (searchParams.get('query')) setSearchParams();
-
-    dispatch(reset());
-  };
 
   return (
     <HeaderWrapper>
       <div className="container">
         <Nav>
-          <ToMainLink to="/" onClick={handleReset}>
+          <ToMainLink to="/">
             <MdDiamond size={50} />
           </ToMainLink>
 
